@@ -1,0 +1,1359 @@
+/* culture-mobile.css - мобильная версия для страницы культуры */
+
+/* Для устройств до 768px */
+@media (max-width: 768px) {
+    /* Базовые настройки */
+    * {
+        cursor: default !important;
+    }
+    
+    /* Скрываем кастомные курсоры на мобильных */
+    .custom-cursor,
+    .cursor-follower,
+    .artists-light-cursor {
+        display: none !important;
+    }
+    
+    /* Боковое меню */
+    .sidebar {
+        width: 280px !important;
+        height: 100vh !important;
+        left: -280px !important;
+        transition: left 0.3s ease !important;
+        z-index: 2000 !important;
+        box-shadow: 2px 0 15px rgba(0, 0, 0, 0.3) !important;
+    }
+    
+    /* Отключаем hover на мобильных */
+    .sidebar:hover {
+        left: -280px !important;
+    }
+    
+    /* Прячем старый индикатор */
+    .sidebar .original-indicator {
+        display: none !important;
+    }
+    
+    /* Класс для открытого меню */
+    .sidebar.open {
+        left: 0 !important;
+    }
+    
+    /* МОБИЛЬНЫЙ ИНДИКАТОР - всегда видим на мобильных */
+    .mobile-menu-indicator {
+        position: fixed !important;
+        left: 0 !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        width: 40px !important;
+        height: 60px !important;
+        background: rgba(197, 196, 196, 0.85) !important;
+        border-radius: 0 30px 30px 0 !important;
+        z-index: 1999 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        cursor: pointer !important;
+        pointer-events: auto !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2) !important;
+    }
+    
+    .mobile-menu-indicator span {
+        font-size: 24px !important;
+        color: #333 !important;
+        font-weight: bold !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .mobile-menu-indicator:hover {
+        background: rgba(0, 0, 0, 0.7) !important;
+        width: 45px !important;
+    }
+    
+    .mobile-menu-indicator:hover span {
+        color: white !important;
+    }
+    
+    /* Когда меню открыто, индикатор скрывается */
+    .sidebar.open ~ .mobile-menu-indicator {
+        opacity: 0 !important;
+        pointer-events: none !important;
+        left: 280px !important;
+    }
+    
+    /* Оверлей для закрытия меню */
+    .menu-overlay {
+        display: none !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(0, 0, 0, 0.5) !important;
+        backdrop-filter: blur(3px) !important;
+        z-index: 1998 !important;
+        pointer-events: auto !important;
+    }
+    
+    .sidebar.open ~ .menu-overlay {
+        display: block !important;
+    }
+    
+    /* Убираем область активации меню на мобильных */
+    body::before {
+        display: none !important;
+    }
+    
+    /* Улучшаем доступность тапов */
+    .mobile-menu-indicator,
+    .menu-links a,
+    .details-btn,
+    .details-btn3 {
+        min-height: 44px !important;
+        min-width: 44px !important;
+    }
+    
+    /* ... остальные стили ... */
+}
+    
+    /* Первый блок */
+    .first-block {
+        background-size: cover;
+        background-position: center;
+        height: 70vh;
+        margin-bottom: 40px;
+    }
+    
+    .main-title {
+        font-size: 3.5rem;
+        top: 70%;
+        text-align: center;
+        width: 90%;
+    }
+    
+    .subtitle {
+        font-size: 3rem;
+        top: 15%;
+        left: 50%;
+    }
+    
+    /* Второй блок */
+    .second-block {
+        min-height: 60vh;
+        padding: 40px 0;
+    }
+    
+    .second-container {
+        flex-direction: column;
+        gap: 20px;
+        width: 90%;
+    }
+    
+    .oval-container {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+    }
+    
+    .outer-oval,
+    .middle-oval {
+        width: 300px;
+        height: 120px;
+        opacity: 0.3; /* Уменьшаем видимость на мобильных */
+    }
+    
+    .inner-oval {
+        width: 280px;
+        height: 150px;
+        padding: 20px;
+    }
+    
+    .description {
+        width: 100%;
+    }
+    
+    .description p {
+        font-size: 1em;
+        line-height: 1.4;
+    }
+    
+    /* Четвертый блок (ключевые новшества) */
+    .four-block {
+        padding: 40px 0;
+        min-height: auto;
+    }
+    
+    .four-container {
+        gap: 30px;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+        white-space: normal;
+        text-align: center;
+        padding: 0 15px;
+        line-height: 1.2;
+    }
+    
+    .ideas-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        max-width: 300px;
+        margin-top: 0;
+        margin-bottom: 50px;
+    }
+    
+    .idea-card,
+    .idea-card.reversed {
+        margin-top: 0 !important;
+        flex-direction: column;
+    }
+    
+    .idea-card .card-top,
+    .idea-card .card-bottom,
+    .idea-card.reversed .card-top,
+    .idea-card.reversed .card-bottom {
+        width: 250px;
+        height: 150px;
+    }
+    
+    .details-btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+        opacity: 0.8; /* Делаем видимым всегда на мобильных */
+    }
+    
+    /* Модальные окна для карточек */
+    .modal-content {
+        width: 95%;
+    }
+    
+    .modal-top,
+    .modal-bottom {
+        width: 250px;
+        height: 120px;
+    }
+    
+    .modal-description {
+        padding: 20px;
+        font-size: 1em;
+        margin: 10px 0;
+    }
+    
+    /* Блок художников */
+    .artists-section {
+        padding: 40px 0;
+        min-height: auto;
+    }
+    
+    .artists-container {
+        padding: 0 15px;
+    }
+    
+    .artist-block {
+        flex-direction: column !important; /* Всегда колонка на мобильных */
+        gap: 30px;
+        margin-bottom: 60px;
+    }
+    
+    .artist-image-wrapper {
+        max-width: 100%;
+        height: 300px;
+    }
+    
+    .artist-content {
+        padding: 20px;
+    }
+    
+    .artist-name {
+        font-size: 2.2rem;
+        text-align: center;
+        white-space: normal;
+    }
+    
+    .artist-quote {
+        font-size: 1em;
+        padding-left: 15px;
+    }
+    
+    .artist-description {
+        font-size: 1em;
+    }
+    
+    /* Кнопки просмотра картин */
+    .light-button button.bt {
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .light-button .button-holder {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    /* Карусель в модальных окнах */
+    .modal .slider {
+        height: 50vh;
+    }
+    
+    .modal .wrapper {
+        width: 120px;
+        height: 180px;
+    }
+    
+    .modal .slide {
+        transform: rotateY(calc(var(--i) * 45deg)) translateZ(180px);
+    }
+    
+    .modal h2 {
+        font-size: 2rem;
+        padding: 0 15px;
+    }
+    
+    .back-btn {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+    
+    /* Архитектура - первый блок */
+    .arch-block,
+    .arch-block2,
+    .arch-block3 {
+        height: 50vh;
+        background-size: cover;
+    }
+    
+    /* Архитектура - второй блок с фотографиями */
+    .arch-container {
+        flex-direction: column;
+        padding: 0 20px;
+        gap: 30px;
+    }
+    
+    .left-section {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .text-group {
+        max-width: 100%;
+    }
+    
+    .quote p {
+        font-size: 16px;
+        padding: 15px 0;
+    }
+    
+    .lines-wrapper {
+        display: none; /* Скрываем линии на мобильных */
+    }
+    
+    .right-section {
+        height: 300px;
+        width: 100%;
+        position: relative;
+    }
+    
+    .image-wrapper {
+        position: absolute;
+    }
+    
+    /* Позиционируем фотографии для мобильных */
+    .image-1 {
+        top: 10% !important;
+        left: 50% !important;
+        transform: translateX(-50%);
+        width: 200px !important;
+        z-index: 3;
+    }
+    
+    .image-2 {
+        top: 40% !important;
+        left: 10% !important;
+        width: 120px !important;
+        z-index: 2;
+    }
+    
+    .image-3 {
+        top: 60% !important;
+        left: 60% !important;
+        width: 180px !important;
+        z-index: 1;
+    }
+    
+    /* Архитектура - третий блок с идеями */
+    .arch-block3 {
+        padding: 40px 0;
+    }
+    
+    .ideas-grid3 {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        max-width: 300px;
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+    
+    .idea-card3,
+    .idea-card3.reversed {
+        margin-top: 0 !important;
+    }
+    
+    .idea-card3 .card-top3,
+    .idea-card3 .card-bottom3 {
+        width: 250px;
+        height: 150px;
+    }
+    
+    .details-btn3 {
+        opacity: 0.8;
+        padding: 10px 20px;
+    }
+    
+    /* Архитектурный слайдер */
+    .renaissance-architecture {
+        height: auto;
+        min-height: 100vh;
+        padding: 40px 0;
+        margin-top: 150px;
+    }
+    
+    .architectural-canvas {
+        padding: 0 15px;
+    }
+    
+    .masterpiece-title {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        white-space: normal;
+        padding: 0 10px;
+    }
+    
+    .vignette-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .facade-portrait {
+        max-height: 40vh;
+        align-self: center;
+    }
+    
+    .renaissance-fresco {
+        max-height: 40vh;
+    }
+    
+    .progetto-details {
+        padding: 15px;
+        max-height: none;
+    }
+    
+    .edifice-name {
+        font-size: 2rem;
+        white-space: normal;
+        text-align: center;
+    }
+    
+    .citta-location {
+        font-size: 1em;
+        text-align: center;
+    }
+    
+    .architettura-descrizione,
+    .maestro-architetto,
+    .stile-architetturale {
+        font-size: 0.95em;
+    }
+    
+    .colonnato-navigation {
+        margin-top: 20px;
+        padding: 0 5px;
+    }
+    
+    .nav-button {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .pietra-indicatori {
+        gap: 8px;
+    }
+    
+    .pietra-dorata {
+        width: 8px;
+        height: 8px;
+    }
+
+
+/* =============================================
+   МОБИЛЬНАЯ ВЕРСИЯ ДЛЯ МАЛЕНЬКИХ ЭКРАНОВ (до 480px)
+   ============================================= */
+@media screen and (max-width: 480px) {
+    .main-title {
+        font-size: 2.8rem;
+    }
+    
+    .subtitle {
+        font-size: 2.5rem;
+    }
+    
+    .section-title,
+    .section-title3 {
+        font-size: 2rem;
+    }
+    
+    .artist-name {
+        font-size: 1.8rem;
+    }
+    
+    .masterpiece-title {
+        font-size: 2rem;
+    }
+    
+    .edifice-name {
+        font-size: 1.6rem;
+    }
+    
+    .idea-card .card-top,
+    .idea-card .card-bottom,
+    .idea-card3 .card-top3,
+    .idea-card3 .card-bottom3 {
+        width: 220px;
+        height: 130px;
+    }
+    
+    .modal .wrapper {
+        width: 100px;
+        height: 150px;
+    }
+    
+    .modal .slide {
+        transform: rotateY(calc(var(--i) * 45deg)) translateZ(150px);
+    }
+    
+    /* Уменьшаем размер фотографий в архитектуре */
+    .image-1 {
+        width: 180px !important;
+    }
+    
+    .image-2 {
+        width: 100px !important;
+        left: 5% !important;
+    }
+    
+    .image-3 {
+        width: 150px !important;
+        left: 55% !important;
+    }
+}
+
+/* =============================================
+   ЛАНДШАФТНАЯ ОРИЕНТАЦИЯ (планшеты и телефоны)
+   ============================================= */
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .first-block {
+        height: 100vh;
+    }
+    
+    .main-title {
+        font-size: 4rem;
+        top: 75%;
+    }
+    
+    .subtitle {
+        font-size: 3.5rem;
+        top: 20%;
+    }
+    
+    /* Для карусели в ландшафтном режиме */
+    .modal .slider {
+        height: 70vh;
+    }
+    
+    .modal .wrapper {
+        width: 140px;
+        height: 200px;
+    }
+}
+
+/* =============================================
+   ОТКЛЮЧАЕМ СЛОЖНЫЕ АНИМАЦИИ ДЛЯ СЛАБЫХ УСТРОЙСТВ
+   ============================================= */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .wrapper {
+        animation: none !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =============================================
+   КАРТОЧКИ ИДЕЙ В СТИЛЕ MAIN.HTML
+   ============================================= */
+
+/* Основные стили для карточек */
+.idea-card {
+    margin-bottom: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    flex-shrink: 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    perspective: 1000px;
+    position: relative;
+}
+
+/* Стили для Bootstrap грида */
+.bootstrap-grid {
+    max-width: 1400px;
+    margin: -30px auto 50px;
+    padding: 0;
+}
+
+.bootstrap-grid .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: visible !important;
+    gap: 30px !important;
+    justify-content: center !important;
+}
+
+.bootstrap-grid .col-auto {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+}
+
+.four-block .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow: visible !important;
+}
+
+/* Позиционирование карточек */
+.idea-card:nth-child(1),
+.idea-card:nth-child(3) {
+    margin-top: -20px !important;
+}
+
+.idea-card.reversed {
+    margin-top: 20px !important;
+}
+
+/* Карточки - верхняя часть */
+.idea-card .card-top {
+    width: 200px;
+    height: 180px;
+    background: #fff;
+    border-radius: 100px 100px 0 0;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-bottom: none;
+    transition: transform 0.3s ease;
+}
+
+/* Карточки - нижняя часть */
+.idea-card .card-bottom {
+    width: 200px;
+    height: 180px;
+    background: linear-gradient(135deg, #050818, #101635);
+    border-radius: 0 0 100px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-top: none;
+    margin-top: -1px;
+    transition: transform 0.3s ease;
+}
+
+/* Перевернутые карточки (четные) */
+.idea-card.reversed {
+    flex-direction: column-reverse;
+}
+
+.idea-card.reversed .card-bottom {
+    border-radius: 100px 100px 0 0;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-bottom: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+    margin-top: 0;
+    margin-bottom: -1px;
+}
+
+.idea-card.reversed .card-top {
+    border-radius: 0 0 100px 100px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-top: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Изображения внутри карточек */
+.idea-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.idea-title {
+    font-family: 'Antikvarika', serif;
+    font-size: 1.2em;
+    color: #ffffff;
+    text-align: center;
+    padding: 0 10px;
+    line-height: 1.3;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Эффекты при наведении */
+.idea-card:hover .card-top {
+    transform: translateY(-5px);
+}
+
+.idea-card:hover .card-bottom {
+    transform: translateY(5px);
+}
+
+.idea-card.reversed:hover .card-top {
+    transform: translateY(5px);
+}
+
+.idea-card.reversed:hover .card-bottom {
+    transform: translateY(-5px);
+}
+
+/* Bootstrap кнопки в стиле main.html */
+.idea-card .btn {
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #0B242D !important;
+    border: 2px solid rgba(255, 255, 255, 0.8) !important;
+    padding: 10px 20px !important;
+    border-radius: 25px !important;
+    font-family: 'Antikvarika', serif !important;
+    font-size: 1em !important;
+    opacity: 0;
+    transition: all 0.3s ease !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 10 !important;
+    min-width: 140px !important;
+}
+
+.idea-card .btn:hover {
+    background: #ffffff !important;
+    transform: translate(-50%, -50%) scale(1.05) !important;
+    border-color: #ffffff !important;
+}
+
+.idea-card:hover .btn {
+    opacity: 1 !important;
+}
+
+/* Модальные окна в стиле main.html */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-top,
+.modal-bottom {
+    width: 300px;
+    height: 150px;
+    background: #fff;
+    border-radius: 150px 150px 0 0;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    transition: all 0.5s ease;
+}
+
+.modal-bottom {
+    background: linear-gradient(135deg, #050818, #101635);
+    border-radius: 0 0 150px 150px;
+    border-top: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-bottom .idea-title {
+    font-size: 1.8em;
+}
+
+.modal-description {
+    width: 100%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    margin: 20px 0;
+    font-family: 'Antikvarika', serif;
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #333;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.5s ease 0.2s;
+}
+
+.modal-overlay.active .modal-description {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+@keyframes modalAppear {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-overlay.active .modal-content {
+    animation: modalAppear 0.5s ease;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .bootstrap-grid .row {
+        gap: 20px !important;
+    }
+    
+    .idea-card .card-top,
+    .idea-card .card-bottom {
+        width: 180px !important;
+        height: 160px !important;
+    }
+    
+    .idea-card .btn {
+        min-width: 130px !important;
+        padding: 8px 16px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .bootstrap-grid {
+        margin: 0 auto 30px;
+    }
+    
+    .bootstrap-grid .row {
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        padding-bottom: 20px;
+        justify-content: flex-start !important;
+        -webkit-overflow-scrolling: touch;
+        gap: 20px !important;
+    }
+    
+    .bootstrap-grid .row::-webkit-scrollbar {
+        height: 5px;
+    }
+    
+    .bootstrap-grid .row::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .bootstrap-grid .row::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+    }
+    
+    .idea-card .card-top,
+    .idea-card .card-bottom {
+        width: 180px !important;
+        height: 160px !important;
+    }
+    
+    .idea-card:nth-child(1),
+    .idea-card:nth-child(3),
+    .idea-card.reversed {
+        margin-top: 0 !important;
+    }
+    
+    .idea-card .btn {
+        opacity: 0.8 !important; /* Делаем видимыми на мобильных */
+        font-size: 0.9em !important;
+        padding: 8px 15px !important;
+        min-width: 120px !important;
+    }
+    
+    /* Модальные окна на мобильных */
+    .modal-top,
+    .modal-bottom {
+        width: 250px;
+        height: 120px;
+    }
+    
+    .modal-description {
+        padding: 20px;
+        font-size: 1em;
+        margin: 10px 0;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 576px) {
+    .bootstrap-grid .row {
+        gap: 15px !important;
+    }
+    
+    .idea-card .card-top,
+    .idea-card .card-bottom {
+        width: 160px !important;
+        height: 140px !important;
+    }
+    
+    .idea-title {
+        font-size: 1.1em;
+    }
+    
+    .modal-top,
+    .modal-bottom {
+        width: 220px;
+        height: 110px;
+    }
+    
+    .modal-description {
+        padding: 15px;
+        font-size: 0.95em;
+    }
+}
+
+
+
+
+/* =============================================
+   АРХИТЕКТУРНЫЕ КАРТОЧКИ В СТИЛЕ MAIN.HTML
+   ============================================= */
+
+/* Основные стили для архитектурных карточек */
+.idea-card3 {
+    margin-bottom: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    flex-shrink: 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    perspective: 1000px;
+    position: relative;
+}
+
+/* Стили для Bootstrap грида архитектуры */
+.bootstrap-grid3 {
+    max-width: 1400px;
+    margin: -20px auto 30px;
+    padding: 0;
+}
+
+.bootstrap-grid3 .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: visible !important;
+    gap: 30px !important;
+    justify-content: center !important;
+}
+
+.bootstrap-grid3 .col-auto {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+}
+
+.arch-block3 .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow: visible !important;
+}
+
+/* Позиционирование архитектурных карточек */
+.idea-card3:nth-child(1),
+.idea-card3:nth-child(3) {
+    margin-top: -20px !important;
+}
+
+.idea-card3.reversed {
+    margin-top: 20px !important;
+}
+
+/* Архитектурные карточки - верхняя часть */
+.idea-card3 .card-top3 {
+    width: 200px;
+    height: 180px;
+    background: #fff;
+    border-radius: 100px 100px 0 0;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-bottom: none;
+    transition: transform 0.3s ease;
+}
+
+/* Архитектурные карточки - нижняя часть */
+.idea-card3 .card-bottom3 {
+    width: 200px;
+    height: 180px;
+    background: linear-gradient(135deg, #050818, #101635);
+    border-radius: 0 0 100px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-top: none;
+    margin-top: -1px;
+    transition: transform 0.3s ease;
+}
+
+/* Перевернутые архитектурные карточки (четные) */
+.idea-card3.reversed {
+    flex-direction: column-reverse;
+}
+
+.idea-card3.reversed .card-bottom3 {
+    border-radius: 100px 100px 0 0;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-bottom: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+    margin-top: 0;
+    margin-bottom: -1px;
+}
+
+.idea-card3.reversed .card-top3 {
+    border-radius: 0 0 100px 100px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-top: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Изображения внутри архитектурных карточек */
+.idea-image3 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.idea-title3 {
+    font-family: 'Antikvarika', serif;
+    font-size: 1.2em;
+    color: #ffffff;
+    text-align: center;
+    padding: 0 10px;
+    line-height: 1.3;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Эффекты при наведении на архитектурные карточки */
+.idea-card3:hover .card-top3 {
+    transform: translateY(-5px);
+}
+
+.idea-card3:hover .card-bottom3 {
+    transform: translateY(5px);
+}
+
+.idea-card3.reversed:hover .card-top3 {
+    transform: translateY(5px);
+}
+
+.idea-card3.reversed:hover .card-bottom3 {
+    transform: translateY(-5px);
+}
+
+/* Bootstrap кнопки для архитектурных карточек */
+.idea-card3 .btn {
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #0B242D !important;
+    border: 2px solid rgba(255, 255, 255, 0.8) !important;
+    padding: 10px 20px !important;
+    border-radius: 25px !important;
+    font-family: 'Antikvarika', serif !important;
+    font-size: 1em !important;
+    opacity: 0;
+    transition: all 0.3s ease !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 10 !important;
+    min-width: 140px !important;
+}
+
+.idea-card3 .btn:hover {
+    background: #ffffff !important;
+    transform: translate(-50%, -50%) scale(1.05) !important;
+    border-color: #ffffff !important;
+}
+
+.idea-card3:hover .btn {
+    opacity: 1 !important;
+}
+
+/* Модальные окна для архитектуры */
+.modal-overlay3 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay3.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content3 {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-top3,
+.modal-bottom3 {
+    width: 300px;
+    height: 150px;
+    background: #fff;
+    border-radius: 150px 150px 0 0;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    transition: all 0.5s ease;
+}
+
+.modal-bottom3 {
+    background: linear-gradient(135deg, #050818, #101635);
+    border-radius: 0 0 150px 150px;
+    border-top: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-bottom3 .idea-title3 {
+    font-size: 1.8em;
+}
+
+.modal-description3 {
+    width: 100%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    margin: 20px 0;
+    font-family: 'Antikvarika', serif;
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #333;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.5s ease 0.2s;
+}
+
+.modal-overlay3.active .modal-description3 {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+@keyframes modalAppear {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-overlay3.active .modal-content3 {
+    animation: modalAppear 0.5s ease;
+}
+
+/* Адаптивность для архитектурных карточек */
+@media (max-width: 1200px) {
+    .bootstrap-grid3 .row {
+        gap: 20px !important;
+    }
+    
+    .idea-card3 .card-top3,
+    .idea-card3 .card-bottom3 {
+        width: 180px !important;
+        height: 160px !important;
+    }
+    
+    .idea-card3 .btn {
+        min-width: 130px !important;
+        padding: 8px 16px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .bootstrap-grid3 {
+        margin: 0 auto 20px;
+    }
+    
+    .bootstrap-grid3 .row {
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        padding-bottom: 20px;
+        justify-content: flex-start !important;
+        -webkit-overflow-scrolling: touch;
+        gap: 20px !important;
+    }
+    
+    .bootstrap-grid3 .row::-webkit-scrollbar {
+        height: 5px;
+    }
+    
+    .bootstrap-grid3 .row::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .bootstrap-grid3 .row::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+    }
+    
+    .idea-card3 .card-top3,
+    .idea-card3 .card-bottom3 {
+        width: 180px !important;
+        height: 160px !important;
+    }
+    
+    .idea-card3:nth-child(1),
+    .idea-card3:nth-child(3),
+    .idea-card3.reversed {
+        margin-top: 0 !important;
+    }
+    
+    .idea-card3 .btn {
+        opacity: 0.8 !important; /* Делаем видимыми на мобильных */
+        font-size: 0.9em !important;
+        padding: 8px 15px !important;
+        min-width: 120px !important;
+    }
+    
+    /* Модальные окна архитектуры на мобильных */
+    .modal-top3,
+    .modal-bottom3 {
+        width: 250px;
+        height: 120px;
+    }
+    
+    .modal-description3 {
+        padding: 20px;
+        font-size: 1em;
+        margin: 10px 0;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 576px) {
+    .bootstrap-grid3 .row {
+        gap: 15px !important;
+    }
+    
+    .idea-card3 .card-top3,
+    .idea-card3 .card-bottom3 {
+        width: 160px !important;
+        height: 140px !important;
+    }
+    
+    .idea-title3 {
+        font-size: 1.1em;
+    }
+    
+    .modal-top3,
+    .modal-bottom3 {
+        width: 220px;
+        height: 110px;
+    }
+    
+    .modal-description3 {
+        padding: 15px;
+        font-size: 0.95em;
+    }
+}

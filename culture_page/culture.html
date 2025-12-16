@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Культура и архитектура</title>
+    <link rel="stylesheet" href="culture.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Wix+Madefor+Display:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Spirax&family=Wix+Madefor+Display:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Romanesque&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Antikvarika&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="custom-cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Меню -->
+    <nav class="sidebar">
+        <!-- Блок фона с размытием -->
+        <div class="sidebar-background"></div>
+        
+        <!-- Блок содержимого поверх фона -->
+        <div class="sidebar-content">
+            <div class="menu-header">
+                <img src="../main_page/image/logo.svg" alt="Логотип" class="logo">
+            </div>
+            <ul class="menu-links">
+                <li><a href="../main_page/main.html">Главная</a></li>
+                <li><a href="culture.html">Культура</a></li> <!-- текущая страница -->
+                <li><a href="../politik_page/politik.html">Политика и общество</a></li>
+                <li><a href="../technology_page/technology.html">Наука и технологии</a></li>
+                <li><a href="../contact.html">Тесты для проверки знаний</a></li>
+            </ul>
+        </div>
+        
+        <!-- Индикатор для открытия меню -->
+        <div class="menu-indicator">
+            <span>☰</span>
+        </div>
+    </nav>
+    
+    <div class="mobile-menu-indicator">
+        <span>☰</span>
+    </div>
+
+    <!-- Главный блок -->
+    <section class="first-block">
+        <div class="first-container">
+            <div class="titles">
+                <h1 class="subtitle">The</h2>
+                <h1 class="main-title">Fine art</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Второй блок -->
+<!-- Второй блок -->
+<section class="second-block">
+    <div class="second-container">
+        <div class="text-side">
+            <div class="oval-container">
+                <div class="outer-oval oval-animate"></div>
+                <div class="middle-oval oval-animate"></div>
+                <div class="inner-oval oval-animate">
+                    <div class="description">
+                        <p>От плоских икон к объемным мирам.</p>
+                        <p>Как художники ренессанса научились изображать реальность</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Третий блок -->
+<!-- Четвертый блок - Ключевые новшества в живописи (стиль как в main.html) -->
+<section class="four-block">
+    <div class="four-container">
+        <h2 class="section-title">Ключевые новшества в живописи</h2>
+        
+        <!-- Bootstrap Grid System -->
+        <div class="container bootstrap-grid">
+            <div class="row flex-nowrap justify-content-center align-items-start">
+                
+                <!-- Карточка 1 - Перспектива -->
+                <div class="col-auto">
+                    <div class="idea-card" data-id="1">
+                        <div class="card-top">
+                            <img src="image/idea11.jpg" alt="Перспектива" class="idea-image">
+                        </div>
+                        <div class="card-bottom">
+                            <span class="idea-title">Перспектива</span>
+                        </div>
+                        <!-- Bootstrap кнопка -->
+                        <button class="details-btn btn btn-outline-light mt-3">Подробнее</button>
+                    </div>
+                </div>
+                
+                <!-- Карточка 2 - Светотень -->
+                <div class="col-auto">
+                    <div class="idea-card reversed" data-id="2">
+                        <div class="card-top">
+                            <img src="image/idea22.jpg" alt="Светотень" class="idea-image">
+                        </div>
+                        <div class="card-bottom">
+                            <span class="idea-title">Светотень</span>
+                        </div>
+                        <!-- Bootstrap кнопка -->
+                        <button class="details-btn btn btn-outline-light mt-3">Подробнее</button>
+                    </div>
+                </div>
+                
+                <!-- Карточка 3 - Техника Сфумато -->
+                <div class="col-auto">
+                    <div class="idea-card" data-id="3">
+                        <div class="card-top">
+                            <img src="image/idea33.jpg" alt="Техника Сфумато" class="idea-image">
+                        </div>
+                        <div class="card-bottom">
+                            <span class="idea-title">Техника "Сфумато"</span>
+                        </div>
+                        <!-- Bootstrap кнопка -->
+                        <button class="details-btn btn btn-outline-light mt-3">Подробнее</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+    
+    <!-- Модальные окна для каждой карточки -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content" id="modalContent"> <!-- Добавлен id -->
+            <div class="modal-top" id="modalTop"></div>
+            <div class="modal-description" id="modalDescription">
+                <!-- Описание будет добавляться через JS -->
+            </div>
+            <div class="modal-bottom" id="modalBottom"></div>
+        </div>
+    </div>
+
+
+    <section class="artists-section">
+        <div class="artists-container">
+            <h2 class="section-title">Великие художники Ренессанса</h2>
+            
+            <!-- Микеланджело -->
+            <div class="artist-block">
+                <div class="artist-image-wrapper">
+                    <div class="artist-image" style="background-image: url('image/artist1.png')"></div>
+                </div>
+                <div class="artist-content">
+                    <h3 class="artist-name">Микеланджело Буонарроти</h3>
+                    <blockquote class="artist-quote">"Истинное произведение искусства есть лишь тень божественного совершенства."</blockquote>
+                    <p class="artist-description">Гениальный скульптор, художник и архитектор эпохи Высокого Возрождения. Автор фресок Сикстинской капеллы, статуи Давида и Пьеты. Его работы демонстрируют невероятное понимание анатомии человеческого тела и драматическую выразительность.</p>
+
+                    <div class="light-button" data-artist="michelangelo">
+                        <button class="bt">
+                          <div class="light-holder">
+                            <div class="dot"></div>
+                            <div class="light"></div>
+                          </div>
+                          <div class="button-holder">
+                            <p>Посмотреть картины</p>
+                          </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Леонардо да Винчи -->
+            <div class="artist-block reversed">
+                <div class="artist-image-wrapper">
+                    <div class="artist-image" style="background-image: url('image/artist2.png')"></div>
+                </div>
+                <div class="artist-content">
+                    <h3 class="artist-name">Леонардо да Винчи</h3>
+                    <blockquote class="artist-quote">"Живопись — это поэзия, которую видят, а поэзия — это живопись, которую слышат."</blockquote>
+                    <p class="artist-description">Универсальный гений Ренессанса, художник, изобретатель, ученый. Создатель "Моны Лизы" и "Тайной вечери". Его инновационные техники сфумато и глубокие исследования анатомии изменили искусство навсегда.</p>
+                    <div class="light-button" data-artist="leonardo">
+                        <button class="bt">
+                          <div class="light-holder">
+                            <div class="dot"></div>
+                            <div class="light"></div>
+                          </div>
+                          <div class="button-holder">
+                            <p>Посмотреть картины</p>
+                          </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Тициан -->
+            <div class="artist-block">
+                <div class="artist-image-wrapper">
+                    <div class="artist-image" style="background-image: url('image/artist3.png')"></div>
+                </div>
+                <div class="artist-content">
+                    <h3 class="artist-name">Тициан Вечеллио</h3>
+                    <blockquote class="artist-quote">"Искусство могущественнее природы."</blockquote>
+                    <p class="artist-description">Величайший венецианский художник Высокого и Позднего Возрождения. Мастер цвета и колорита, создатель многочисленных портретов, мифологических и религиозных композиций. Его поздние работы отличаются смелой, почти импрессионистической манерой.</p>
+                    <div class="light-button" data-artist="titian">
+                        <button class="bt">
+                          <div class="light-holder">
+                            <div class="dot"></div>
+                            <div class="light"></div>
+                          </div>
+                          <div class="button-holder">
+                            <p>Посмотреть картины</p>
+                          </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Рафаэль Санти -->
+            <div class="artist-block reversed">
+                <div class="artist-image-wrapper">
+                    <div class="artist-image" style="background-image: url('image/artist4.png')"></div>
+                </div>
+                <div class="artist-content">
+                    <h3 class="artist-name">Рафаэль Санти</h3>
+                    <blockquote class="artist-quote">"Чтобы нарисовать красавицу, мне надо видеть много красавиц."</blockquote>
+                    <p class="artist-description">Художник и архитектор Высокого Возрождения, известный гармоничными и изящными композициями. Автор "Афинской школы" и многочисленных мадонн. Его искусство стало воплощением классического идеала красоты Ренессанса.</p>
+                    <div class="light-button" data-artist="raphael">
+                        <button class="bt">
+                          <div class="light-holder">
+                            <div class="dot"></div>
+                            <div class="light"></div>
+                          </div>
+                          <div class="button-holder">
+                            <p>Посмотреть картины</p>
+                          </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Сандро Ботичелли -->
+            <div class="artist-block">
+                <div class="artist-image-wrapper">
+                    <div class="artist-image" style="background-image: url('image/artist5.png')"></div>
+                </div>
+                <div class="artist-content">
+                    <h3 class="artist-name">Сандро Ботичелли</h3>
+                    <blockquote class="artist-quote">"Красота души придает прелесть даже самому неправильному телу."</blockquote>
+                    <p class="artist-description">Флорентийский художник Раннего Возрождения, создатель "Рождения Венеры" и "Весны". Его работы отличаются изящной линейностью, поэтической атмосферой и влиянием неоплатонической философии.</p>
+                    <div class="light-button" data-artist="botticelli">
+                        <button class="bt">
+                          <div class="light-holder">
+                            <div class="dot"></div>
+                            <div class="light"></div>
+                          </div>
+                          <div class="button-holder">
+                            <p>Посмотреть картины</p>
+                          </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Альбрехт Дюрер -->
+            <div class="artist-block reversed">
+                <div class="artist-image-wrapper">
+                    <div class="artist-image" style="background-image: url('image/artist6.png')"></div>
+                </div>
+                <div class="artist-content">
+                    <h3 class="artist-name">Альбрехт Дюрер</h3>
+                    <blockquote class="artist-quote">"Что такое красота — я не знаю. Это тайна."</blockquote>
+                    <p class="artist-description">Немецкий живописец и график Северного Возрождения, выдающийся мастер гравюры. Сочетал готические традиции с достижениями итальянского Ренессанса. Автор знаменитых гравюр "Апокалипсис" и многочисленных автопортретов.</p>
+                    <div class="light-button" data-artist="durer">
+                        <button class="bt">
+                          <div class="light-holder">
+                            <div class="dot"></div>
+                            <div class="light"></div>
+                          </div>
+                          <div class="button-holder">
+                            <p>Посмотреть картины</p>
+                          </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Специальный курсор-подсветка для этого блока -->
+        <div class="artists-light-cursor"></div>
+    </section>
+    
+    <!-- Модальные окна для каждого художника -->
+    <div id="michelangelo-modal" class="modal">
+        <div class="modal-content">
+            <button class="back-btn">Назад</button>
+            <h2>Картины Микеланджело Буонарроти</h2>
+            <section class="slider">
+                <section class="servicegallery">
+                    <div class="wrapper">
+                        <span class="slide" style="--i: 1">
+                            <img src="image/michelangelo1.png" alt="Картина Микеланджело 1"/>
+                        </span>
+                        <span class="slide" style="--i: 2">
+                            <img src="image/michelangelo2.png" alt="Картина Микеланджело 2"/>
+                        </span>
+                        <span class="slide" style="--i: 3">
+                            <img src="image/michelangelo3.png" alt="Картина Микеланджело 3"/>
+                        </span>
+                        <span class="slide" style="--i: 4">
+                            <img src="image/michelangelo4.png" alt="Картина Микеланджело 4"/>
+                        </span>
+                        <span class="slide" style="--i: 5">
+                            <img src="image/michelangelo5.png" alt="Картина Микеланджело 5"/>
+                        </span>
+                        <span class="slide" style="--i: 6">
+                            <img src="image/michelangelo6.png" alt="Картина Микеланджело 6"/>
+                        </span>
+                        <span class="slide" style="--i: 7">
+                            <img src="image/michelangelo7.png" alt="Картина Микеланджело 7"/>
+                        </span>
+                        <span class="slide" style="--i: 8">
+                            <img src="image/michelangelo8.png" alt="Картина Микеланджело 8"/>
+                        </span>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </div>
+    
+    <div id="leonardo-modal" class="modal">
+        <div class="modal-content">
+            <button class="back-btn">Назад</button>
+            <h2>Картины Леонардо да Винчи</h2>
+            <section class="slider">
+                <section class="servicegallery">
+                    <div class="wrapper">
+                        <span class="slide" style="--i: 1">
+                            <img src="image/leonardo1.png" alt="Картина Леонардо 1"/>
+                        </span>
+                        <span class="slide" style="--i: 2">
+                            <img src="image/leonardo2.png" alt="Картина Леонардо 2"/>
+                        </span>
+                        <span class="slide" style="--i: 3">
+                            <img src="image/leonardo3.png" alt="Картина Леонардо 3"/>
+                        </span>
+                        <span class="slide" style="--i: 4">
+                            <img src="image/leonardo4.png" alt="Картина Леонардо 4"/>
+                        </span>
+                        <span class="slide" style="--i: 5">
+                            <img src="image/leonardo5.png" alt="Картина Леонардо 5"/>
+                        </span>
+                        <span class="slide" style="--i: 6">
+                            <img src="image/leonardo6.png" alt="Картина Леонардо 6"/>
+                        </span>
+                        <span class="slide" style="--i: 7">
+                            <img src="image/leonardo7.png" alt="Картина Леонардо 7"/>
+                        </span>
+                        <span class="slide" style="--i: 8">
+                            <img src="image/leonardo8.png" alt="Картина Леонардо 8"/>
+                        </span>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </div>
+
+    <div id="titian-modal" class="modal">
+        <div class="modal-content">
+            <button class="back-btn">Назад</button>
+            <h2>Картины Тициана Вечеллио</h2>
+            <section class="slider">
+                <section class="servicegallery">
+                    <div class="wrapper">
+                        <span class="slide" style="--i: 1">
+                            <img src="image/titian1.png" alt="Картина Тициана 1"/>
+                        </span>
+                        <span class="slide" style="--i: 2">
+                            <img src="image/titian2.png" alt="Картина Тициана 2"/>
+                        </span>
+                        <span class="slide" style="--i: 3">
+                            <img src="image/titian3.png" alt="Картина Тициана 3"/>
+                        </span>
+                        <span class="slide" style="--i: 4">
+                            <img src="image/titian4.png" alt="Картина Тициана 4"/>
+                        </span>
+                        <span class="slide" style="--i: 5">
+                            <img src="image/titian5.png" alt="Картина Тициана 5"/>
+                        </span>
+                        <span class="slide" style="--i: 6">
+                            <img src="image/titian6.png" alt="Картина Тициана 6"/>
+                        </span>
+                        <span class="slide" style="--i: 7">
+                            <img src="image/titian7.png" alt="Картина Тициана 7"/>
+                        </span>
+                        <span class="slide" style="--i: 8">
+                            <img src="image/titian8.png" alt="Картина Тициана 8"/>
+                        </span>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </div>
+    
+    <div id="raphael-modal" class="modal">
+        <div class="modal-content">
+            <button class="back-btn">Назад</button>
+            <h2>Картины Рафаэля Санти</h2>
+            <section class="slider">
+                <section class="servicegallery">
+                    <div class="wrapper">
+                        <span class="slide" style="--i: 1">
+                            <img src="image/raphael1.png" alt="Картина Рафаэля 1"/>
+                        </span>
+                        <span class="slide" style="--i: 2">
+                            <img src="image/raphael2.png" alt="Картина Рафаэля 2"/>
+                        </span>
+                        <span class="slide" style="--i: 3">
+                            <img src="image/raphael3.png" alt="Картина Рафаэля 3"/>
+                        </span>
+                        <span class="slide" style="--i: 4">
+                            <img src="image/raphael4.png" alt="Картина Рафаэля 4"/>
+                        </span>
+                        <span class="slide" style="--i: 5">
+                            <img src="image/raphael5.png" alt="Картина Рафаэля 5"/>
+                        </span>
+                        <span class="slide" style="--i: 6">
+                            <img src="image/raphael6.png" alt="Картина Рафаэля 6"/>
+                        </span>
+                        <span class="slide" style="--i: 7">
+                            <img src="image/raphael7.png" alt="Картина Рафаэля 7"/>
+                        </span>
+                        <span class="slide" style="--i: 8">
+                            <img src="image/raphael8.png" alt="Картина Рафаэля 8"/>
+                        </span>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </div>
+
+    <div id="botticelli-modal" class="modal">
+        <div class="modal-content">
+            <button class="back-btn">Назад</button>
+            <h2>Картины Сандро Ботичелли</h2>
+            <section class="slider">
+                <section class="servicegallery">
+                    <div class="wrapper">
+                        <span class="slide" style="--i: 1">
+                            <img src="image/botticelli1.png" alt="Картина Ботичелли 1"/>
+                        </span>
+                        <span class="slide" style="--i: 2">
+                            <img src="image/botticelli2.png" alt="Картина Ботичелли 2"/>
+                        </span>
+                        <span class="slide" style="--i: 3">
+                            <img src="image/botticelli3.png" alt="Картина Ботичелли 3"/>
+                        </span>
+                        <span class="slide" style="--i: 4">
+                            <img src="image/botticelli4.png" alt="Картина Ботичелли 4"/>
+                        </span>
+                        <span class="slide" style="--i: 5">
+                            <img src="image/botticelli5.png" alt="Картина Ботичелли 5"/>
+                        </span>
+                        <span class="slide" style="--i: 6">
+                            <img src="image/botticelli6.png" alt="Картина Ботичелли 6"/>
+                        </span>
+                        <span class="slide" style="--i: 7">
+                            <img src="image/botticelli7.png" alt="Картина Ботичелли 7"/>
+                        </span>
+                        <span class="slide" style="--i: 8">
+                            <img src="image/botticelli8.png" alt="Картина Ботичелли 8"/>
+                        </span>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </div>
+
+    <div id="durer-modal" class="modal">
+        <div class="modal-content">
+            <button class="back-btn">Назад</button>
+            <h2>Картины Альбрехта Дюрера</h2>
+            <section class="slider">
+                <section class="servicegallery">
+                    <div class="wrapper">
+                        <span class="slide" style="--i: 1">
+                            <img src="image/durer1.png" alt="Картина Дюрера 1"/>
+                        </span>
+                        <span class="slide" style="--i: 2">
+                            <img src="image/durer2.png" alt="Картина Дюрера 2"/>
+                        </span>
+                        <span class="slide" style="--i: 3">
+                            <img src="image/durer3.png" alt="Картина Дюрера 3"/>
+                        </span>
+                        <span class="slide" style="--i: 4">
+                            <img src="image/durer4.png" alt="Картина Дюрера 4"/>
+                        </span>
+                        <span class="slide" style="--i: 5">
+                            <img src="image/durer5.png" alt="Картина Дюрера 5"/>
+                        </span>
+                        <span class="slide" style="--i: 6">
+                            <img src="image/durer6.png" alt="Картина Дюрера 6"/>
+                        </span>
+                        <span class="slide" style="--i: 7">
+                            <img src="image/durer7.png" alt="Картина Дюрера 7"/>
+                        </span>
+                        <span class="slide" style="--i: 8">
+                            <img src="image/durer8.png" alt="Картина Дюрера 8"/>
+                        </span>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </div>
+    
+    <!-- 2 Блок архитектуры -->
+    <section class="arch-block">
+        <div class="arch-container">
+        </div>
+    </section>
+
+    <section class="arch-block2">
+        <div class="arch-container">
+            <!-- Левая часть: рамки, текст и линии -->
+            <div class="left-section">
+                <!-- Группа с рамками и текстом -->
+                <div class="text-group">
+                    <!-- Верхняя рамка -->
+                    <div class="frame-top">
+                        <img src="image/rama_top.svg" alt="Верхняя рамка" class="frame-img">
+                    </div>
+                    
+                    <!-- Текст цитаты -->
+                    <div class="quote">
+                        <p>Архитектура Ренессанса — это математика, ставшая искусством. Гармония, пропорция и симметрия, унаследованные у Древнего Рима.</p>
+                    </div>
+                    
+                    <!-- Нижняя рамка -->
+                    <div class="frame-bottom">
+                        <img src="image/rama_bottom.svg" alt="Нижняя рамка" class="frame-img">
+                    </div>
+                </div>
+                
+                <!-- Линии под группой (нижний слой) -->
+                <div class="lines-wrapper">
+                    <img src="image/linii.svg" alt="Линии" class="lines">
+                </div>
+            </div>
+            
+            <!-- Правая часть: фотографии с настраиваемыми отступами -->
+            <div class="right-section">
+                <div class="image-wrapper image-1">
+                    <img src="image/Maskgroup1.png" alt="Архитектура 1" class="arch-image">
+                </div>
+                <div class="image-wrapper image-2">
+                    <img src="image/Maskgroup2.png" alt="Архитектура 2" class="arch-image">
+                </div>
+                <div class="image-wrapper image-3">
+                    <img src="image/Maskgroup3.png" alt="Архитектура 3" class="arch-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Третий блок архитектуры - Основные идеи архитектуры -->
+<section class="arch-block3">
+    <div class="arch-container3">
+        <h2 class="section-title3">Основные идеи архитектуры</h2>
+        
+        <!-- Bootstrap Grid System -->
+        <div class="container bootstrap-grid3">
+            <div class="row flex-nowrap justify-content-center align-items-start">
+                
+                <!-- Карточка 1 - Симметрия и пропорция -->
+                <div class="col-auto">
+                    <div class="idea-card3" data-id="1">
+                        <div class="card-top3">
+                            <img src="image/idea111.png" alt="Симметрия и пропорция" class="idea-image3">
+                        </div>
+                        <div class="card-bottom3">
+                            <span class="idea-title3">Симметрия и пропорция</span>
+                        </div>
+                        <!-- Bootstrap кнопка -->
+                        <button class="details-btn3 btn btn-outline-light mt-3">Подробнее</button>
+                    </div>
+                </div>
+                
+                <!-- Карточка 2 - Ордерная система -->
+                <div class="col-auto">
+                    <div class="idea-card3 reversed" data-id="2">
+                        <div class="card-top3">
+                            <img src="image/idea222.png" alt="Ордерная система" class="idea-image3">
+                        </div>
+                        <div class="card-bottom3">
+                            <span class="idea-title3">Ордерная система</span>
+                        </div>
+                        <!-- Bootstrap кнопка -->
+                        <button class="details-btn3 btn btn-outline-light mt-3">Подробнее</button>
+                    </div>
+                </div>
+                
+                <!-- Карточка 3 - Купольное перекрытие -->
+                <div class="col-auto">
+                    <div class="idea-card3" data-id="3">
+                        <div class="card-top3">
+                            <img src="image/idea333.png" alt="Купольное перекрытие" class="idea-image3">
+                        </div>
+                        <div class="card-bottom3">
+                            <span class="idea-title3">Купольное перекрытие</span>
+                        </div>
+                        <!-- Bootstrap кнопка -->
+                        <button class="details-btn3 btn btn-outline-light mt-3">Подробнее</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Модальное окно для второго блока архитектуры -->
+    <div class="modal-overlay" id="modalOverlay3">
+        <div class="modal-content" id="modalContent3">
+            <div class="modal-top" id="modalTop3"></div>
+            <div class="modal-description" id="modalDescription3">
+                <!-- Описание будет добавляться через JS -->
+            </div>
+            <div class="modal-bottom" id="modalBottom3"></div>
+        </div>
+    </div>
+    
+
+<!-- Блок со слайдером "Знаковые постройки" -->
+<section class="renaissance-architecture">
+    <div class="architectural-canvas">
+        <!-- Заголовок посередине сверху -->
+        <h2 class="masterpiece-title">Знаковые постройки</h2>
+        
+        <div class="palazzo-slider">
+            <!-- Слайды -->
+            <div class="dome-container">
+                <!-- Слайд 1 -->
+                <div class="architectural-card basilica-active" data-progetto="1">
+                    <div class="vignette-content">
+                        <!-- Фото слева внизу -->
+                        <div class="facade-portrait">
+                            <img src="image/ar2.png" alt="Собор Санта-Мария-дель-Фьоре" class="renaissance-fresco">
+                        </div>
+                        
+                        <!-- Информация справа от фото -->
+                        <div class="progetto-details">
+                            <h3 class="edifice-name">Собор Санта-Мария-дель-Фьоре</h3>
+                            <p class="citta-location">Флоренция, Италия 1436 год</p>
+                            <div class="architettura-descrizione">
+                                <p>Величественный кафедральный собор Флоренции, знаменитый своим огромным кирпичным куполом, созданным Филиппо Брунеллески. Купол диаметром 42 метра стал технологическим прорывом эпохи Возрождения и символом Флоренции.</p>
+                                <p class="maestro-architetto">Архитектор: Филиппо Брунеллески</p>
+                                <p class="stile-architetturale">Стиль: Ренессанс с элементами готики</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Слайд 2 -->
+                <div class="architectural-card" data-progetto="2">
+                    <div class="vignette-content">
+                        <div class="facade-portrait">
+                            <img src="image/ar1.png" alt="Собор Святого Петра" class="renaissance-fresco">
+                        </div>
+                        <div class="progetto-details">
+                            <h3 class="edifice-name">Собор Святого Петра</h3>
+                            <p class="citta-location">Ватикан, Рим 1626 год</p>
+                            <div class="architettura-descrizione">
+                                <p>Крупнейшая христианская церковь в мире, построенная на месте захоронения святого Петра. В создании собора участвовали такие мастера как Донато Браманте, Микеланджело и Джованни Лоренцо Бернини.</p>
+                                <p class="dimensioni-cupola">Высота купола: 136 метров</p>
+                                <p class="maestro-architetto">Архитекторы: Браманте, Рафаэль, Микеланджело, Бернини</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Слайд 3 -->
+                <div class="architectural-card" data-progetto="3">
+                    <div class="vignette-content">
+                        <div class="facade-portrait">
+                            <img src="image/ar4.png" alt="Палаццо Медичи-Риккарди" class="renaissance-fresco">
+                        </div>
+                        <div class="progetto-details">
+                            <h3 class="edifice-name">Замок Шамбор</h3>
+                            <p class="citta-location">Франция 1547 год</p>
+                            <div class="architettura-descrizione">
+                                <p>Замок Шамбор был построен в период между 1519 и 1547 годами и является одним из ярких примеров архитектурного стиля французского Возрождения. Это самый большой замок во французской долине Луары и один из самых узнаваемых и знаменитых замков Европы.</p>
+                                <p class="maestro-architetto">Архитектор: Доменико да Кортона</p>
+                                <p class="caratteristica-facade">Особенность: скульптурный декор и запутанная планировка</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Слайд 4 -->
+                <div class="architectural-card" data-progetto="4">
+                    <div class="vignette-content">
+                        <div class="facade-portrait">
+                            <img src="image/ar3.png" alt="Вилла Ротонда" class="renaissance-fresco">
+                        </div>
+                        <div class="progetto-details">
+                            <h3 class="edifice-name">Вилла Ротонда</h3>
+                            <p class="citta-location">Виченца, Италия 1592 год</p>
+                            <div class="architettura-descrizione">
+                                <p>Загородная вилла, спроектированная Андреа Палладио. Идеально симметричное здание с центральным круглым залом и четырьмя одинаковыми фасадами стало одним из самых влиятельных образцов палладианской архитектуры.</p>
+                                <p class="maestro-architetto">Архитектор: Андреа Палладио</p>
+                                <p class="stile-architetturale">Стиль: Палладианство</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Слайд 5 -->
+                <div class="architectural-card" data-progetto="5">
+                    <div class="vignette-content">
+                        <div class="facade-portrait">
+                            <img src="image/ar5.png" alt="Вилла Ротонда" class="renaissance-fresco">
+                        </div>
+                        <div class="progetto-details">
+                            <h3 class="edifice-name">Антверпенская Ратуша</h3>
+                            <p class="citta-location">Бельгия 1560 год</p>
+                            <div class="architettura-descrizione">
+                                <p>Сооружение включало в себя элементы фламандского и итальянского Ренессанса, и было одним из самых влиятельных зданий на территории Северной Европы прямо с момента завершения своего строительства</p>
+                                <p class="maestro-architetto">Архитектор: Корнелис Флорис</p>
+                                <p class="stile-architetturale">Сочетание двух стилей: итальянского Возрождения и брабантской готики</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Кнопки навигации -->
+            <div class="colonnato-navigation">
+                <button class="nav-button capitello-prev" aria-label="Предыдущая постройка">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                
+                <!-- Индикаторы слайдов -->
+                <div class="pietra-indicatori">
+                    <button class="pietra-dorata pietra-attiva" data-progetto="1" aria-label="Перейти к постройке 1"></button>
+                    <button class="pietra-dorata" data-progetto="2" aria-label="Перейти к постройке 2"></button>
+                    <button class="pietra-dorata" data-progetto="3" aria-label="Перейти к постройке 3"></button>
+                    <button class="pietra-dorata" data-progetto="4" aria-label="Перейти к постройке 4"></button>
+                    <button class="pietra-dorata" data-progetto="5" aria-label="Перейти к постройке 5"></button>
+                </div>
+                
+                <button class="nav-button capitello-next" aria-label="Следующая постройка">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="menu-overlay"></div>
+
+    <script src="culture.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
