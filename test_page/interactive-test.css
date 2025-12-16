@@ -1,0 +1,239 @@
+/* Стили для интерактивных заданий */
+
+/* Табы */
+.interactive-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.task-title {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+.task-desc {
+    text-align: center;
+    color: #c5c5c5;
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+
+/* Сетка для Drag & Drop (Задания 1 и 2) */
+.drag-drop-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.col-title {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: normal;
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.707),
+        0 0 60px rgba(255, 255, 255, 0.553),
+        0 0 100px rgba(255, 255, 255, 0.369);
+}
+
+.drop-zone {
+    min-height: 60px;
+    border: 2px dashed #a0aec0;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f8f9fa;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.drop-zone strong {
+    pointer-events: none;
+    color: #4a5568;
+    font-weight: normal;
+}
+
+.drop-zone.zone-hover {
+    border-color: #667eea;
+    background: #ebf4ff;
+    transform: scale(1.02);
+}
+
+.drop-zone.correct {
+    border-color: #244e2e;
+    background: rgba(40, 167, 69, 0.1);
+}
+
+.drop-zone.incorrect {
+    border-color: #380b0b;
+    background: rgba(220, 53, 53, 0.1);
+}
+
+.draggable-item {
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.592);
+    border: 2px solid #ccd3db;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: grab;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.2s;
+    font-weight: bold;
+    color: #283140;
+    font-weight: normal;
+    text-align: center;
+}
+
+.draggable-item:active {
+    cursor: grabbing;
+}
+
+.draggable-item.dragging {
+    opacity: 0.5;
+    transform: scale(0.95);
+    background-color: #e2e8f0;
+}
+
+/* Стили для Таймлайна (Задание 3) */
+.timeline-sortable {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+}
+
+.timeline-sortable.correct-border {
+    border-color: #244e2e;
+    background: rgba(40, 167, 69, 0.1);
+}
+.timeline-sortable.incorrect-border {
+    border-color: #380b0b;
+    background: rgba(220, 53, 53, 0.1);
+}
+
+
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    cursor: grab;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.timeline-item:hover {
+    background: #edf2f7;
+    transform: translateX(5px);
+}
+
+.timeline-item.dragging {
+    opacity: 0.5;
+    background: #c3dafe;
+    border-style: dashed;
+}
+
+.timeline-item .handle {
+    color: #a0aec0;
+    cursor: grab;
+    padding: 5px;
+}
+
+/* Стили для Карты (Задание 4) */
+.map-game-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    background: #1a202c; /* Фон под картой */
+}
+
+.game-map-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0.8; /* Немного затемняем для контраста */
+}
+
+.map-zone {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px dashed rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%); /* Центрирование по координатам */
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.map-zone.map-zone-hover {
+    background: rgba(102, 126, 234, 0.4);
+    border-color: #fff;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.map-pins-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.map-pin {
+    background: #380b0b;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: grab;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 10;
+}
+
+.map-pin:active {
+    cursor: grabbing;
+}
+
+.map-pin i {
+    font-size: 1.1em;
+}
+
+/* Адаптивность для интерактивности */
+@media (max-width: 768px) {
+    .drag-drop-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .map-zone {
+        width: 40px;
+        height: 40px;
+    }
+}
+

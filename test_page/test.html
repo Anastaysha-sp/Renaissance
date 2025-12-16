@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тесты для проверки знаний</title>
+    
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Wix+Madefor+Display:wght@400..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Spirax&family=Wix+Madefor+Display:wght@400..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Romanesque&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Antikvarika&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Библиотеки для интерактивного теста -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sortable/0.8.0/css/sortable-theme-bootstrap.min.css" />
+    
+    <!-- Стили -->
+    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="interactive-test.css"> <!-- НОВЫЙ ФАЙЛ -->
+</head>
+<body>
+
+    <div class="custom-cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Меню -->
+    <nav class="sidebar">
+        <div class="sidebar-background"></div>
+        <div class="sidebar-content">
+            <div class="menu-header">
+                <img src="../main_page/image/logo.svg" alt="Логотип" class="logo">
+            </div>
+            <ul class="menu-links">
+                <li><a href="../main_page/main.html">Главная</a></li>
+                <li><a href="../culture_page/culture.html">Культура</a></li>
+                <li><a href="../politik_page/politik.html">Политика и общество</a></li>
+                <li><a href="../technology_page/technology.html">Наука и технологии</a></li>
+                <li><a href="test.html">Тесты для проверки знаний</a></li>
+            </ul>
+        </div>
+        <div class="menu-indicator">
+            <span>☰</span>
+        </div>
+    </nav>
+
+    <!-- Главный блок -->
+    <section class="first-block">
+        <div class="first-container">
+            <div class="titles">
+                <h1 class="subtitle">The</h2>
+                <h1 class="main-title">Testing</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Инструкция -->
+    <section class="second-block">
+        <div class="instructions-container">
+            <h1 class="instructions-title">Инструкция к прохождению</h1>
+            <div class="description">
+                <p>Инструкция по прохождению тестов включает следующие правила: каждый тест ограничен 10 минутами, и в нём содержатся вопросы с выбором одного правильного ответа. Результат отображается сразу после завершения теста. При выполнении можно возвращаться к предыдущим вопросам. Четвертый тест является интерактивным и содержит 5 различных заданий. Важно учесть, что при истечении времени тест завершается автоматически.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Тесты -->
+    <section class="tests-section">
+        <div class="tests-container">
+            <h2 class="section-title">Выберите тест</h2>
+            
+            <div class="tests-grid">
+                <!-- Тест 1: Культура -->
+                <div class="test-card" data-test="1">
+                    <div class="test-header">
+                        <h3 class="test-title">Культура и искусство</h3>
+                    </div>
+                    <div class="test-body">
+                        <p class="test-description">Вопросы о художниках, архитектуре и живописи эпохи Возрождения. Проверьте свои знания в области искусства этого великого периода.</p>
+                        <div class="test-features">
+                            <div class="test-feature">
+                                <span>10 вопросов</span>
+                            </div>
+                            <div class="test-feature">
+                                <span>Уровень: средний</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="test-footer">
+                        <button class="start-test-btn" data-test="1">
+                            Начать тест
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Тест 2: Политика -->
+                <div class="test-card" data-test="2">
+                    <div class="test-header">
+                        <h3 class="test-title">Политика и общество</h3>
+                    </div>
+                    <div class="test-body">
+                        <p class="test-description">Вопросы о правителях, государственном устройстве и социальной структуре эпохи Возрождения.</p>
+                        <div class="test-features">
+                            <div class="test-feature">
+                                <span>10 вопросов</span>
+                            </div>
+                            <div class="test-feature">
+                                <span>Уровень: сложный</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="test-footer">
+                        <button class="start-test-btn" data-test="2">
+                             Начать тест
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Тест 3: Наука -->
+                <div class="test-card" data-test="3">
+                    <div class="test-header">
+                        <h3 class="test-title">Наука и технологии</h3>
+                    </div>
+                    <div class="test-body">
+                        <p class="test-description">Вопросы об изобретениях, ученых и географических открытиях эпохи Возрождения.</p>
+                        <div class="test-features">
+                            <div class="test-feature">
+                                <span>10 вопросов</span>
+                            </div>
+                            <div class="test-feature">
+                                <span>Уровень: средний</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="test-footer">
+                        <button class="start-test-btn" data-test="3">
+                            Начать тест
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Тест 4: Интерактивный -->
+                <div class="test-card" data-test="4">
+                    <div class="test-header">
+                        <h3 class="test-title">Интерактивный тест</h3>
+                    </div>
+                    <div class="test-body">
+                        <p class="test-description">4 интерактивных задания: соединение линиями, сортировка и работа с картой.</p>
+                        <div class="test-features">
+                            <div class="test-feature">
+                                <span>5 заданий</span>
+                            </div>
+                            <div class="test-feature">
+                                <span>Уровень: продвинутый</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="test-footer">
+                        <button class="start-test-btn" data-test="4">
+                            Начать тест
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Модальное окно для тестов -->
+    <div class="test-modal" id="testModal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="testModalLabel">Тестирование</h3>
+                <div class="timer-container" id="timer">
+                </div>
+                <button class="close-btn" id="closeTest">&times;</button>
+            </div>
+            <div class="modal-body" id="testContent">
+                <!-- Содержимое теста будет загружаться через JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Библиотеки для интерактивного теста -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sortable/0.8.0/js/sortable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
+    
+    <script src="test.js"></script>
+    <script src="interactive-test.js"></script> <!-- НОВЫЙ ФАЙЛ -->
+</body>
+</html>
