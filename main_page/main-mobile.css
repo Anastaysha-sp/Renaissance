@@ -1,0 +1,513 @@
+/* mobile.css - адаптация для телефонов */
+
+/* Для устройств до 768px */
+@media (max-width: 768px) {
+    /* Базовые настройки */
+    * {
+        cursor: default !important;
+    }
+    
+    .custom-cursor,
+    .cursor-follower {
+        display: none !important;
+    }
+    
+    /* Боковое меню - полная переделка для мобильных */
+    .sidebar {
+        width: 280px;
+        height: 100vh;
+        left: -280px;
+        transition: left 0.3s ease;
+        z-index: 2000;
+        pointer-events: auto;
+        box-shadow: 2px 0 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .logo {
+        margin-top: -16px;
+    }
+
+    .menu-links {
+        margin-top: -10px;
+    }
+
+    /* Класс для открытого меню */
+    .sidebar.open {
+        left: 0 !important;
+    }
+    
+    /* Индикатор меню становится кнопкой открытия */
+    .menu-indicator {
+        position: fixed;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 60px;
+        background: rgba(197, 196, 196, 0.85);
+        border-radius: 0 30px 30px 0;
+        z-index: 1999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        pointer-events: auto;
+        transition: all 0.3s ease;
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .menu-indicator span {
+        font-size: 20px;
+        color: #333;
+        transition: all 0.3s ease;
+    }
+    
+    .menu-indicator:hover {
+        background: rgba(0, 0, 0, 0.7);
+    }
+    
+    .menu-indicator:hover span {
+        color: white;
+    }
+    
+    /* Когда меню открыто, индикатор скрывается */
+    .sidebar.open ~ .menu-indicator {
+        opacity: 0;
+        pointer-events: none;
+        left: 280px;
+    }
+    
+    /* Оверлей для закрытия меню */
+    .menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(3px);
+        z-index: 1998;
+        pointer-events: auto;
+    }
+    
+    .sidebar.open ~ .menu-overlay {
+        display: block;
+    }
+    
+    /* Первый блок (заглавный) */
+    .first-block {
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        min-height: 600px;
+        margin-bottom: 40px;
+    }
+    
+    .main-title {
+        font-size: 3.5rem;
+        top: 51% !important;
+        width: 90%;
+        text-align: center;
+    }
+    
+    .subtitle {
+        font-size: 2.8rem;
+        top: 47% !important;
+        width: 90%;
+        text-align: center;
+    }
+    
+    .rama {
+        max-height: 70vh;
+    }
+    
+    /* Второй блок (описание) */
+    .second-block {
+        background-size: cover;
+        min-height: auto;
+        padding: 40px 0;
+    }
+    
+    .second-container {
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 20px;
+    }
+    
+    .image-side {
+        width: 100%;
+    }
+    
+    .angel-image {
+        max-width: 100%;
+        max-height: 400px;
+    }
+    
+    .text-side {
+        width: 100%;
+    }
+    
+    .description {
+        margin-right: 0;
+        padding: 0;
+        text-align: center;
+    }
+    
+    .description h1 {
+        font-size: 2.8rem;
+        white-space: normal;
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+    
+    .divider {
+        margin: 20px 0;
+    }
+    
+    .description p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        margin-top: 15px;
+        text-align: center;
+        padding: 0 10px;
+    }
+    
+    /* Третий блок (текстовые блоки) */
+    .third-block {
+        height: auto;
+        min-height: auto;
+        background-size: cover;
+        padding: 40px 0;
+    }
+    
+    .third-container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        height: auto;
+    }
+    
+    .text-item {
+        position: static !important;
+        width: 90%;
+        margin: 0 auto;
+        padding: 25px 20px;
+        text-align: center !important;
+    }
+    
+    .text-item h2 {
+        font-size: 1.8rem;
+        white-space: normal;
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+    
+    .text-item p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+    
+    /* Таймлайн */
+    .timeline-container {
+        padding: 40px 15px 100px;
+        margin-bottom: 30px;
+        align-items: center !important;
+    }
+    
+    .year-title1 {
+        margin-bottom: 60px;
+    }
+    
+    .year-title {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        padding: 10px 15px;
+        white-space: normal;
+        text-align: center;
+    }
+    
+    .timeline-block::before {
+        display: none;
+    }
+    
+    .timeline-event {
+        width: 100%;
+        max-width: 320px;
+        margin: 30px auto !important;
+        padding: 20px;
+        transform-origin: center !important;
+    }
+    
+    .timeline-event:nth-child(odd),
+    .timeline-event:nth-child(even) {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-top: 0 !important;
+        margin-bottom: 50px !important;
+    }
+    
+    .timeline-event::before {
+        position: static;
+        display: block;
+        margin: -40px auto 15px;
+        font-size: 2.5rem;
+        background: transparent;
+        color: #aec5e6;
+        width: 100%;
+        text-align: center;
+        opacity: 1;
+        height: auto;
+    }
+    
+    .event-content h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    
+    .event-content p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        text-align: center;
+    }
+    
+    /* Изображения таймлайна - скрываем на мобильных */
+    .timeline-images {
+        display: none;
+    }
+    
+    /* Пятый блок (основатели гуманизма) */
+    .humanism-founders-section {
+        min-height: 100vh;
+        padding: 40px 0;
+    }
+    
+    .slider-container {
+        flex-direction: column;
+        height: auto;
+        min-height: 600px;
+    }
+    
+    .slide-number {
+        display: none !important;
+    }
+    
+    .slider {
+        order: 3;
+        width: 100%;
+        height: auto;
+        min-height: 400px;
+        margin: 20px 0;
+    }
+    
+    .slide {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .founder-image {
+        max-width: 180px !important;
+        margin: 0 auto 20px;
+        display: block;
+        margin-top: 0;
+    }
+    
+    .slide-content {
+        position: relative;
+        margin-top: 0;
+        padding-left: 0;
+        top: auto;
+        transform: none;
+        width: 100%;
+        height: auto;
+        padding: 0 20px;
+    }
+    
+    .slide-info {
+        max-width: 100%;
+        padding: 20px;
+        opacity: 1;
+        transform: none;
+    }
+    
+    .founder-title {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+    
+    .founder-dates {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+    
+    .founder-description {
+        font-size: 1rem;
+        line-height: 1.4;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .slider-nav {
+        order: 4;
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin: 20px auto;
+    }
+    
+    .nav-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 2.8rem;
+    }
+    
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 90%;
+        height: 90%;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(10px);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .modal-content {
+        position: relative;
+        width: 70%;
+        max-width: 600px;
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .modal-top,
+    .modal-bottom {
+        display: none;
+    }
+    
+    .modal-bottom .idea-title {
+        font-size: 1.2em;
+    }
+    
+    .modal-description {
+        width: 90%;
+        max-width: 400px;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 40px;
+        border-radius: 20px;
+        margin: 20px 0;
+        font-family: "Antikvarika", serif;
+        font-size: 1em;
+        line-height: 1.6;
+        color: #333;
+        text-align: center;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        transform: translateY(20px);
+        opacity: 0;
+        transition: all 0.5s ease 0.2s;
+    }
+} /* ← ЗАКРЫВАЮЩАЯ СКОБКА медиа-запроса */
+
+/* Для очень маленьких экранов (до 480px) */
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 2.8rem;
+    }
+    
+    .subtitle {
+        font-size: 2.2rem;
+        top: 38%;
+    }
+    
+    .description h1 {
+        font-size: 2.2rem;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .text-item h2 {
+        font-size: 1.5rem;
+    }
+    
+    .year-title {
+        font-size: 2rem;
+    }
+    
+    .event-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    /* Карточки идей на очень маленьких экранах */
+    .col-auto {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .idea-card .card-top,
+    .idea-card .card-bottom {
+        width: 160px !important;
+        height: 140px !important;
+    }
+    
+    .founder-title {
+        font-size: 1.5rem;
+    }
+    
+    .slide-number.prev-number {
+        font-size: 2rem;
+    }
+    
+    .slide-number.current-number {
+        font-size: 3rem;
+    }
+}
+
+/* Ландшафтная ориентация для мобильных */
+@media (max-width: 768px) and (orientation: landscape) {
+    .first-block {
+        min-height: 400px;
+        height: 70vh;
+    }
+    
+    .main-title {
+        font-size: 2.5rem;
+        top: 60%;
+    }
+    
+    .subtitle {
+        font-size: 2rem;
+        top: 45%;
+    }
+    
+    .humanism-founders-section {
+        min-height: auto;
+    }
+    
+    .slider-container {
+        min-height: 400px;
+    }
+    
+    .slide {
+        flex-direction: row;
+        gap: 20px;
+    }
+    
+    .founder-image {
+        max-width: 150px;
+    }
+}

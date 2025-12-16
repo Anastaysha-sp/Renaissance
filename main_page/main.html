@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Wix+Madefor+Display:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Spirax&family=Wix+Madefor+Display:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Romanesque&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Antikvarika&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main-mobile.css" media="(max-width: 768px)">
+</head>
+<body>
+
+    <div class="custom-cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Меню -->
+    <nav class="sidebar">
+        <!-- Блок фона с размытием -->
+        <div class="sidebar-background"></div>
+        
+        <!-- Блок содержимого поверх фона -->
+        <div class="sidebar-content">
+            <div class="menu-header">
+                <img src="image/logo.svg" alt="Логотип" class="logo">
+            </div>
+            <ul class="menu-links">
+                <li><a href="main.html">Главная</a></li> <!-- текущая страница -->
+                <li><a href="../culture_page/culture.html">Культура</a></li>
+                <li><a href="../politik_page/politik.html">Политика и общество</a></li>
+                <li><a href="../technology_page/technology.html">Наука и технологии</a></li>
+                <li><a href="../test_page/test.html">Тесты для проверки знаний</a></li>
+            </ul>
+        </div>
+        
+        <!-- Индикатор для открытия меню -->
+        <div class="menu-indicator">
+            <span>☰</span>
+        </div>
+    </nav>
+    
+
+    <!-- Главный блок -->
+    <section class="first-block">
+        <div class="first-container">
+            <img src="image/рама.png" alt="Рамка" class="rama">
+            <div class="titles">
+                <h1 class="subtitle">The</h2>
+                <h1 class="main-title">Renaissance</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Второй блок -->
+    <section class="second-block">
+        <div class="second-container">
+            <div class="image-side">
+                <img src="image/angel.png" alt="Ангел" class="angel-image">
+            </div>
+            <div class="text-side">
+                <div class="description">
+                    <h1>Эпоха возрождения</h1>
+                    <div class="divider">
+                        <img src="image/divide2.svg" alt="Разделитель" class="divider-image">
+                    </div>
+                    <p>Что такое возрождение? Это мост между мрачным Средневековьем и Новым временем. Эпоха титанов духа, великих открытий и невероятной красоты, созданной человеком для человеком.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="timeline-container">
+        <section class="timeline-block">
+
+            <div class="timeline-images">
+                <div class="period-images period-1">
+                    <img src="image/period1.png" class="timeline-img img-1" alt="Проторенессанс 1">
+                    <img src="image/period2.png" class="timeline-img img-2" alt="Проторенессанс 2">
+                </div>
+                <div class="period-images period-2">
+                    <img src="image/period3.png" class="timeline-img img-3" alt="Раннее Возрождение 1">
+                    <img src="image/period4.png" class="timeline-img img-4" alt="Раннее Возрождение 2">
+                </div>
+                <div class="period-images period-3">
+                    <img src="image/period5.png" class="timeline-img img-5" alt="Высокое Возрождение 1">
+                    <img src="image/period6.png" class="timeline-img img-6" alt="Высокое Возрождение 2">
+                </div>
+                <div class="period-images period-4">
+                    <img src="image/period7.png" class="timeline-img img-7" alt="Позднее Возрождение 1">
+                    <img src="image/period8.png" class="timeline-img img-8" alt="Позднее Возрождение 2">
+                </div>
+            </div>
+
+          <div class="timeline-year">
+            <div class="year-title1">
+                <div class="year-title" data-animate="true">Периодизация эпохи Возрождения</div>
+            </div>
+            <div class="timeline-event" data-period="XIV" data-animate="true">
+              <div class="event-content">
+                    <h2>Проторенессанс</h2>
+                    <p>Зарождение новых идей. Джотто и другие мастера начали делать религиозные изображения более объемными и эмоциональными, отходя от плоских византийских канонов.</p>
+              </div>
+            </div>
+          
+            <div class="timeline-event" data-period="XV" data-animate="true">
+            <div class="event-content">
+                    <h2>Раннее Возрождение</h2>
+                    <p>Время открытий. Во Флоренции Брунеллески и Донателло разработали правила перспективы и анатомии, создав ясный и гармоничный художественный язык.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-event" data-period="XVI" data-animate="true">
+            <div class="event-content">
+                    <h2>Высокое Возрождение</h2>
+                    <p>Вершина эпохи. Леонардо, Рафаэль и Микеланджело достигли идеального баланса между наукой и искусством, создав величайшие произведения.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-event" data-period="XVI" data-animate="true">
+            <div class="event-content">
+                    <h2>Позднее Возрождение</h2>
+                    <p>Отход от гармонии. На смену идеалу пришли сложные, драматичные формы маньеризма с его вытянутыми фигурами и напряженными сюжетами.</p>
+            </div>
+          </div>
+            </div>
+
+        </section>
+        </div>
+
+<!-- Четвертый блок - Ключевые идеи эпохи (с Bootstrap) -->
+<section class="four-block">
+    <div class="four-container">
+        <h2 class="section-title">Ключевые идеи эпохи</h2>
+        
+        <!-- Bootstrap Grid System - одна строка -->
+        <div class="container bootstrap-grid">
+            <div class="row flex-nowrap justify-content-center align-items-start">
+                
+                <!-- Карточка 1 - Гуманизм -->
+                <div class="col-auto">
+                    <div class="idea-card" data-id="1">
+                        <div class="card-top">
+                            <img src="image/idea1.jpg" alt="Гуманизм" class="idea-image">
+                        </div>
+                        <div class="card-bottom">
+                            <span class="idea-title">Гуманизм</span>
+                        </div>
+                        <!-- Bootstrap кнопка -->
+                        <button class="details-btn btn btn-outline-light mt-3">Подробнее</button>
+                    </div>
+                </div>
+                
+                <!-- Карточка 2 - Возрождение античности -->
+                <div class="col-auto">
+                    <div class="idea-card reversed" data-id="2">
+                        <div class="card-top">
+                            <img src="image/idea2.jpg" alt="Возрождение античности" class="idea-image">
+                        </div>
+                        <div class="card-bottom">
+                            <span class="idea-title">Возрождение античности</span>
+                        </div>
+                        <!-- Bootstrap кнопка -->
+                        <button class="details-btn btn btn-outline-light mt-3">Подробнее</button>
+                    </div>
+                </div>
+                
+                <!-- Карточка 3 - Научный прорыв -->
+                <div class="col-auto">
+                    <div class="idea-card" data-id="3">
+                        <div class="card-top">
+                            <img src="image/idea3.jpg" alt="Научный прорыв" class="idea-image">
+                        </div>
+                        <div class="card-bottom">
+                            <span class="idea-title">Научный прорыв</span>
+                        </div>
+                        <!-- Bootstrap кнопка -->
+                        <button class="details-btn btn btn-outline-light mt-3">Подробнее</button>
+                    </div>
+                </div>
+                
+                <!-- Карточка 4 - Индивидуализм -->
+                <div class="col-auto">
+                    <div class="idea-card reversed" data-id="4">
+                        <div class="card-top">
+                            <img src="image/idea4.jpg" alt="Индивидуализм" class="idea-image">
+                        </div>
+                        <div class="card-bottom">
+                            <span class="idea-title">Индивидуализм</span>
+                        </div>
+                        <!-- Bootstrap кнопка -->
+                        <button class="details-btn btn btn-outline-light mt-3">Подробнее</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+    
+    <!-- Модальные окна для каждой карточки -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content" id="modalContent"> <!-- Добавлен id -->
+            <div class="modal-top" id="modalTop"></div>
+            <div class="modal-description" id="modalDescription">
+                <!-- Описание будет добавляться через JS -->
+            </div>
+            <div class="modal-bottom" id="modalBottom"></div>
+        </div>
+    </div>
+
+    <!-- Пятый блок - Основатели гуманизма -->
+<section class="humanism-founders-section">
+    <div class="slider-container">
+        <div class="slide-number prev-number">
+            <span>1</span>
+        </div>
+
+        <!-- Слайды -->
+        <div class="slider">
+            <!-- Слайд 1 - Петрарка -->
+            <div class="slide active">
+                <img src="image/petrarka.png" alt="Франческо Петрарка" class="founder-image">
+                <div class="slide-content">
+                    <div class="slide-info">
+                        <h2 class="founder-title">Франческо Петрарка</h2>
+                        <p class="founder-dates">1304-1374</p>
+                        <p class="founder-description">Итальянский поэт и мыслитель, считающийся отцом гуманизма. Автор "Канцоньере" - сборника сонетов, посвященных Лауре. Первым начал систематическое изучение античных текстов.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Слайд 2 - Данте -->
+            <div class="slide">
+                <img src="image/dante.png" alt="Данте Алигьери" class="founder-image">
+                <div class="slide-content">
+                    <div class="slide-info">
+                        <h2 class="founder-title">Данте Алигьери</h2>
+                        <p class="founder-dates">1265-1321</p>
+                        <p class="founder-description">Великий итальянский поэт, автор "Божественной комедии". Заложил основы итальянского литературного языка. Его творчество стало мостом между Средневековьем и Возрождением.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Слайд 3 - Боккаччо -->
+            <div class="slide">
+                <img src="image/bokkachcho.png" alt="Джованни Боккаччо" class="founder-image">
+                <div class="slide-content">
+                    <div class="slide-info">
+                        <h2 class="founder-title">Джованни Боккаччо</h2>
+                        <p class="founder-dates">1313-1375</p>
+                        <p class="founder-description">Итальянский писатель и поэт, автор "Декамерона". Друг Петрарки, один из первых гуманистов. В своих произведениях воспевал земную жизнь и человеческие чувства.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Слайд 4 - Лоренцо Валла -->
+            <div class="slide">
+                <img src="image/valla.png" alt="Лоренцо Валла" class="founder-image">
+                <div class="slide-content">
+                    <div class="slide-info">
+                        <h2 class="founder-title">Лоренцо Валла</h2>
+                        <p class="founder-dates">1407-1457</p>
+                        <p class="founder-description">Итальянский гуманист, филолог и философ. Разработал методы историко-филологической критики. Доказал подложность "Константинова дара" - документа, на котором основывалась светская власть пап.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Слайд 5 - Леонардо Бруни -->
+            <div class="slide">
+                <img src="image/bruni.png" alt="Леонардо Бруни" class="founder-image">
+                <div class="slide-content">
+                    <div class="slide-info">
+                        <h2 class="founder-title">Леонардо Бруни</h2>
+                        <p class="founder-dates">1370-1444</p>
+                        <p class="founder-description">Итальянский гуманист, историк и государственный деятель. Канцлер Флорентийской республики. Автор "Истории флорентийского народа" - первого современного исторического труда.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Номер текущего слайда справа -->
+        <div class="slide-number current-number">
+            <span>2</span>
+        </div>
+        
+        <!-- Навигационные кнопки -->
+        <div class="slider-nav">
+            <button class="nav-btn prev-btn">←</button>
+            <button class="nav-btn next-btn">→</button>
+        </div>
+    </div>
+</section>
+
+<script src="main.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
