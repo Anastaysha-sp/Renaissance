@@ -1,0 +1,1042 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+  
+@font-face {
+    font-family: 'Romanesque';
+    src: url('fonts/Romanesque.ttf') format('truetype');
+    /* или укажите правильный путь к вашему файлу шрифта */
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background-color: #F2EED4;
+    overflow-x: hidden; /* Важно! Убирает горизонтальную прокрутку */
+}
+
+.custom-cursor {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.1s ease;
+}
+
+/* Внешний круг-фолловер */
+.cursor-follower {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transition: all 0.3s ease;
+    transition-property: width, height, border, transform;
+}
+
+/* Стили для меню - полностью скрыто */
+.sidebar {
+    position: fixed;
+    left: -320px;
+    top: 0;
+    width: 320px;
+    height: 100vh;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar:hover {
+    left: 0;
+}
+
+/* Блок фона с размытием */
+.sidebar-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.531);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1;
+}
+
+/* Блок содержимого поверх фона */
+.sidebar-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+.logo {
+    margin-top: 30px;
+    max-width: 100px;
+    height: auto;
+}
+
+.menu-links {
+    text-align: center;
+    list-style: none;
+    flex-grow: 1;
+}
+
+.menu-links li {
+    margin-bottom: 15px;
+}
+
+.menu-links li:not(:last-child)::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 10px;
+    background: url('../main_page/image/divide.svg') center/contain no-repeat;
+    margin: 15px auto;
+    opacity: 0.6;
+}
+
+.menu-links a {
+    text-decoration: none;
+    font-family: 'Romanesque';
+    color: #d1d1d1;
+    font-size: 24px;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.menu-links a:hover {
+    color: #ffffff;
+    text-shadow: 
+        0 0 10px rgba(168, 216, 255, 0.595),
+        0 0 60px rgba(168, 216, 255, 0.426),
+        0 0 100px rgba(168, 216, 255, 0.252);
+        animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px rgba(168, 216, 255, 0.595); }
+    to { text-shadow: 0 0 60px rgba(168, 216, 255, 0.426), 0 0 100px rgba(168, 216, 255, 0.252); }
+}
+
+/* Минималистичный индикатор меню */
+.menu-indicator {
+    position: absolute;
+    left: 320px; /* Позиционируем справа от сайдбара */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 50px;
+    background: rgba(197, 196, 196, 0.7);
+    border-radius: 0 30px 30px 0;
+    cursor: pointer;
+    z-index: 3;
+    transition: all 0.3s ease;
+    box-shadow: 1px 0 3px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-indicator:hover {
+    background: rgba(0, 0, 0, 0.531);
+    width: 8px;
+}
+
+.sidebar:hover .menu-indicator {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.first-block {
+    background-image: url('image/fon_politik1.png');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100% auto;
+    box-shadow: 0px 0px 50px 20px rgba(0, 0, 0, 0.297);
+    animation: fade-glow 3s infinite alternate;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 70px;
+}
+
+@keyframes fade-glow {
+    from {
+      box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.439);
+    }
+    to {
+      box-shadow: 0px 0px 50px 20px rgba(0, 0, 0, 0.525);
+    }
+  }
+
+.rama {
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+    object-fit: contain;
+}
+
+.main-title {
+    font-family: "Spirax", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 8rem;
+    position: absolute;
+    top: 59%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.subtitle {
+    font-family: "Ballet", cursive;
+    font-size: 7rem;
+    font-weight: 300;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 41%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+/* Область для активации меню */
+body::before {
+    content: '';
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 100vh;
+    z-index: 999;
+    background: transparent;
+    cursor: pointer;
+}
+
+.second-block {
+    background-image: url('image/fon_politik2.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.second-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.description {
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.description p{
+    font-size: 1.2em;
+    line-height: 1.6;
+    font-family: 'Antikvarika';
+    color: #e0e0e0;
+}
+
+
+
+
+
+
+
+
+/* Третий блок - Слайдер */
+.third-block {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.third-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+}
+
+.wrapper {
+    width: 1300px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.cap {
+    text-align: center;
+}
+
+.cap .header {
+    font-family: 'Romanesque', serif;
+    font-size: 80px;
+    font-weight: normal;
+    color: #140606;
+    text-decoration: none;
+    text-shadow: none;
+    transition: none;
+    letter-spacing: 1px;
+    font-variant: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    margin-bottom: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.1;
+}
+
+.body {
+    color: #333;
+    overflow: hidden;
+    display: flex;
+    min-height: 350px;
+    text-align: center;
+}
+
+.body .header {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 15px;
+    text-transform: capitalize;
+    font-family: 'Antikvarika', serif;
+    color: #352b22;
+}
+
+.body .description {
+    font-size: 17px;
+    font-weight: 700;
+    margin: 0;
+    text-transform: capitalize;
+    font-family: 'Antikvarika', serif;
+    color: #40362e;
+    line-height: 30px;
+}
+
+.carousel-container {
+    width: 40%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.content {
+    border-left: 1px solid #40362e;
+    width: 60%;
+    height: 350px;
+    max-height: 350px;
+    padding: 25px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    margin-right: 100px;
+}
+
+.item-content {
+    flex-grow: 1;
+}
+
+/* Carousel */
+.carousel {
+    height: 100%;
+}
+
+.slick-slider {
+    height: 100% !important;
+    margin: 0 !important;
+}
+
+.slick-list {
+    height: 100% !important;
+    overflow: visible !important;
+}
+
+.slick-track {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.slick-slide {
+    height: 100%;
+    opacity: 0.4;
+    outline: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.slick-slide.slick-active {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.carousel-item {
+    height: 100%;
+    width: 100%;
+}
+
+/* Правители */
+.item {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.ruler {
+    width: 220px;
+    height: 284px;
+    position: relative;
+    transform-style: preserve-3d;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease;
+    margin-top: 20px;
+}
+
+.ruler:hover {
+    transform: translateY(-10px) rotateX(5deg);
+}
+
+.ruler-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    backface-visibility: hidden;
+}
+
+.ruler-1 .ruler-image {
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('image/piramida1.png');
+}
+
+.ruler-2 .ruler-image {
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('image/piramida2.png');
+}
+
+.ruler-3 .ruler-image {
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('image/piramida3.png');
+}
+
+.ruler-4 .ruler-image {
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('image/piramida4.png');
+}
+
+.ruler-5 .ruler-image {
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('image/piramida5.png');
+}
+
+
+
+
+
+
+
+
+.four-block {
+    background-image: url('image/fon_politik3.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.four-container {
+    position: relative;
+    width: 95%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 65px;
+    bottom: 25px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: 'Romanesque', serif;
+    font-size: 80px;
+    font-weight: normal;
+    color: #140606;
+    text-decoration: none;
+    text-shadow: none;
+    transition: none;
+    letter-spacing: 1px;
+    font-variant: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    margin-top: -150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.1;
+}
+
+.ideas-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0px;
+    width: 100%;
+    max-width: 1100px;
+    align-items: start; /* Важно для разного выравнивания */
+    margin-top: 50px;
+}
+
+.idea-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    perspective: 1000px;
+}
+
+/* 1 и 3 блоки - выше относительно центра */
+.idea-card:nth-child(1),
+.idea-card:nth-child(3) {
+    margin-top: -20px; /* Поднимаем вверх */
+}
+
+/* 2 и 4 блоки - ниже относительно центра */
+.idea-card:nth-child(2),
+.idea-card:nth-child(4) {
+    margin-top: 20px; /* Опускаем вниз */
+}
+
+/* ОБЫЧНЫЕ КАРТОЧКИ (1 и 3) */
+.idea-card .card-top {
+    width: 180px;
+    height: 160px;
+    background: #fff;
+    border-radius: 100px 100px 0 0;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-bottom: none;
+}
+
+.idea-card .card-bottom {
+    width: 180px;
+    height: 160px;
+    background: linear-gradient(135deg, #6e0623, #391F1F);
+    border-radius: 0 0 100px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-top: none;
+    margin-top: -1px;
+}
+
+/* ПЕРЕВЕРНУТЫЕ КАРТОЧКИ (2 и 4) */
+.idea-card.reversed {
+    flex-direction: column-reverse;
+}
+
+.idea-card.reversed .card-bottom {
+    border-radius: 100px 100px 0 0;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-bottom: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+    margin-top: 0;
+    margin-bottom: -1px;
+}
+
+.idea-card.reversed .card-top {
+    border-radius: 0 0 100px 100px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-top: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.idea-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.idea-title {
+    font-family: 'Antikvarika', serif;
+    font-size: 1.2em;
+    color: #ffffff;
+    text-align: center;
+    padding: 0 10px;
+    line-height: 1.3;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Эффекты при наведении */
+.idea-card:hover .card-top {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+.idea-card:hover .card-bottom {
+    transform: translateY(5px);
+    transition: transform 0.3s ease;
+}
+
+.idea-card.reversed:hover .card-top {
+    transform: translateY(5px);
+}
+
+.idea-card.reversed:hover .card-bottom {
+    transform: translateY(-5px);
+}
+
+/* Стили для кнопки "Подробнее" */
+.details-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    color: #0B242D;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-family: 'Antikvarika', serif;
+    font-size: 1em;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.idea-card:hover .details-btn {
+    opacity: 1;
+}
+
+.details-btn:hover {
+    background: #ffffff;
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* Стили для модального окна */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-top,
+.modal-bottom {
+    width: 300px;
+    height: 150px;
+    background: #fff;
+    border-radius: 150px 150px 0 0;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    transition: all 0.5s ease;
+}
+
+.modal-bottom {
+    background: linear-gradient(135deg, #0B242D, #203841);
+    border-radius: 0 0 150px 150px;
+    border-top: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-bottom .idea-title {
+    font-size: 1.8em;
+}
+
+.modal-description {
+    width: 100%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    margin: 20px 0;
+    font-family: 'Antikvarika', serif;
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #333;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.5s ease 0.2s;
+}
+
+.modal-overlay.active .modal-description {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Анимация появления модального окна */
+@keyframes modalAppear {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-overlay.active .modal-content {
+    animation: modalAppear 0.5s ease;
+}
+
+
+
+
+
+
+.artists-section {
+    background-image: url('image/fon_politik5.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 100vw;
+    min-height: 150vh;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+    cursor: none;
+    margin-top: 100px;
+}
+
+.artists-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title1 {
+    font-family: 'Romanesque', serif;
+    font-weight: normal;
+    color: #140606;
+    text-decoration: none;
+    text-shadow: none;
+    transition: none;
+    letter-spacing: 1px;
+    font-variant: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.1;
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 50px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.artist-block {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 100px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.artist-block:nth-child(2) { animation-delay: 0.2s; }
+.artist-block:nth-child(3) { animation-delay: 0.4s; }
+.artist-block:nth-child(4) { animation-delay: 0.6s; }
+.artist-block:nth-child(5) { animation-delay: 0.8s; }
+.artist-block:nth-child(6) { animation-delay: 1s; }
+
+/* Добавляем стиль для reversed блоков */
+.artist-block.reversed {
+    flex-direction: row-reverse;
+}
+
+.artist-image-wrapper {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    height: 420px;
+    max-width: 330px;
+    transition: transform 0.3s ease;
+}
+
+.artist-image-wrapper:hover {
+    transform: translateY(-5px);
+}
+
+.artist-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: filter 0.4s ease;
+    position: relative;
+}
+
+.artist-content {
+    flex: 1;
+    position: relative;
+    padding: 50px;
+}
+
+.artist-name {
+    font-size: 3.2rem;
+    margin-bottom: 28px;
+    font-family: 'Romanesque', serif;
+    font-weight: normal;
+    color: #211919;
+    text-decoration: none;
+    text-shadow: none;
+    transition: none;
+    letter-spacing: 1px;
+    font-variant: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.1;
+    font-weight: normal;
+    text-align: center;
+}
+
+.artist-quote {
+    font-family: 'Antikvarika', serif;
+    font-size: 1.1rem;
+    color: #211919;
+    line-height: 1.5;
+    text-align: justify;
+    font-style: italic;
+    border-left: 3px solid #555;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.artist-description {
+    font-family: 'Antikvarika', serif;
+    font-size: 1.1rem;
+    color: #211919;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* Специальный курсор-подсветка для блока художников */
+.artists-light-cursor {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.9) 0%,
+        rgba(255, 255, 255, 0.5) 30%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 70%
+    );
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9997;
+    mix-blend-mode: overlay;
+    filter: blur(20px);
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+}
+
+.artists-section.light-cursor-active .artists-light-cursor {
+    opacity: 1;
+}
+
+/* Эффект подсветки изображений при наведении курсора */
+.artist-image-wrapper.highlighted .artist-image {
+    filter: brightness(0.9) contrast(1.1);
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+.view-paintings-btn {
+    background: linear-gradient(45deg, #8B4513, #D2691E);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+}
+
+.view-paintings-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+    background: linear-gradient(45deg, #D2691E, #8B4513);
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 10000;
+    overflow: auto;
+}
+
+.modal-content {
+    position: relative;
+    margin: 0% auto;
+    padding-top: 45px;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 90vh;
+}
+
+.modal h2 {
+    font-family: 'Romanesque', serif;
+    font-size: 50px;
+    font-weight: normal;
+    color: #d1d1d1;
+    text-decoration: none;
+    text-shadow: none;
+    transition: none;
+    letter-spacing: 1px;
+    font-variant: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.1;
+    text-align: center;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.back-btn {
+    font-family: 'Romanesque', serif;
+    font-weight: normal;
+    text-decoration: none;
+    text-shadow: none;
+    transition: none;
+    letter-spacing: 1px;
+    font-variant: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #02051100;
+    color: rgb(221, 221, 221);
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    color: white;
+    transform: translateY(-2px);
+}
