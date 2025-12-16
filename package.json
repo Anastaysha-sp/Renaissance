@@ -1,0 +1,10 @@
+{
+  "name": "renaissance-project",
+  "version": "1.0.0",
+  "scripts": {
+    "scss": "sass main_page/main.scss main_page/main.css --watch"
+  },
+  "devDependencies": {
+    "sass": "^1.70.0"
+  }
+}
