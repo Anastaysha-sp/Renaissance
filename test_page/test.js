@@ -968,9 +968,9 @@ function loadInteractiveTest() {
                 <p class="task-desc">Перетащите метки на соответствующие места на карте.</p>
                 
                 <div class="map-game-container">
-                    <img src="../technology_page/image/карта.jpg" class="game-map-img" alt="World Map">
+                    <img src="../technology_page/image/karta.jpg" class="game-map-img" alt="World Map">
                     
-                    <!-- Зоны сброса (Drop Zones) - координаты примерные для image/карта.jpg -->
+                    <!-- Зоны сброса (Drop Zones) - координаты примерные для image/karta.jpg -->
 
                     <div class="map-zone" style="bottom: 35%; left: 65%;" data-location="hope"></div>
     
@@ -1070,4 +1070,5 @@ window.nextQuestion = nextQuestion;
 window.goToQuestion = goToQuestion;
 window.finishTest = finishTest;
 window.restartTest = restartTest;
+
 window.closeTestModal = closeTestModal;
