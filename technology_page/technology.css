@@ -1190,3 +1190,442 @@ font-size: 1em;
 .timeline-event.animate-in {
   border-color: #42A5F5;
 }
+
+
+
+
+
+
+
+/* Для мобильных телефонов (до 768px) */
+@media (max-width: 768px) {
+    /* Отключаем кастомный курсор на телефонах */
+    .custom-cursor,
+    .cursor-follower {
+        display: none;
+    }
+    
+    * {
+        cursor: auto !important;
+    }
+    
+    /* Сайдбар для мобильных - делаем более компактным */
+    .sidebar {
+        width: 250px;
+        left: -250px;
+    }
+    
+    .menu-links a {
+        font-size: 20px;
+    }
+    
+    .logo {
+        max-width: 80px;
+    }
+    
+    .menu-indicator {
+        left: 250px;
+    }
+    
+    /* Убираем фоновые изображения везде, кроме первого блока */
+    .arch-block2,
+    .humanism-founders-section,
+    .four-block,
+    .five-block,
+    .timeline-container {
+        background-image: none !important;
+        background-color: #060B1D;
+    }
+    
+    /* Первый блок - адаптируем фон */
+    .first-block {
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        min-height: 600px;
+    }
+    
+    .main-title {
+        font-size: 2.5rem;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        text-align: center;
+        color: #090417;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    }
+    
+    .subtitle {
+        font-size: 2rem;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+        color: #090417;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    }
+    
+    /* Второй блок - цитата */
+    .arch-block2 {
+        height: auto;
+        padding: 60px 20px;
+    }
+    
+    .quote {
+        margin: 0 auto;
+        width: 100%;
+        padding: 0 20px;
+    }
+    
+    .quote p {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+    
+    /* Третий блок - слайдер ученых */
+    .humanism-founders-section {
+        padding: 40px 0;
+        min-height: auto;
+        height: auto;
+    }
+    
+    .slider-container {
+        height: auto;
+        min-height: 500px;
+    }
+    
+    .prev-number {
+        display: none;
+    }
+    
+    .current-number {
+        display: none;
+    }
+    
+    .slider {
+        width: 100%;
+        height: 400px;
+        margin-top: 100px;
+    }
+    
+    .slide {
+        flex-direction: column;
+        text-align: center;
+        justify-content: flex-start;
+        padding-top: 20px;
+    }
+    
+    .founder-image {
+        max-width: 150px;
+        height: 180px;
+        object-fit: cover;
+        margin-top: 0;
+    }
+    
+    .slide-content {
+        position: relative;
+        margin-top: 20px;
+        padding-left: 0;
+        padding: 0 15px;
+    }
+    
+    .slide-info {
+        max-width: 100%;
+        padding: 1rem 0;
+    }
+    
+    .founder-title {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+    
+    .founder-dates {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+    
+    .founder-description {
+        font-size: 0.95em;
+        max-width: 100%;
+        line-height: 1.4;
+    }
+    
+    .slider-nav {
+        bottom: -25px;
+    }
+    
+    /* Четвертый блок - карусель изобретений - УВЕЛИЧИВАЕМ ВЫСОТУ */
+    .four-block {
+        height: auto;
+        min-height: 120vh; /* Увеличиваем высоту */
+        padding: 60px 0;
+        display: flex;
+        align-items: center;
+    }
+    
+    .ftitles {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    .fsubtitle {
+        font-size: 2rem;
+        margin: 0;
+        padding: 0 20px;
+        text-align: center;
+    }
+    
+    .carousel-container {
+        position: relative;
+        height: 80vh; /* Увеличиваем высоту контейнера */
+        margin-top: 0;
+    }
+    
+    .carousel {
+        height: 100%; /* Занимаем всю высоту контейнера */
+    }
+    
+    .carousel-item {
+        --width: clamp(150px, 45vw, 200px);
+        --height: clamp(200px, 60vw, 280px); /* Увеличиваем высоту карточек */
+    }
+    
+    /* Увеличиваем зону видимости карточек */
+    .carousel-item {
+        top: 50%;
+        left: 50%;
+    }
+    
+    .carousel-box {
+        height: 100%;
+    }
+    
+    .title {
+        font-size: 18px;
+        bottom: 15px;
+        left: 15px;
+    }
+    
+    .num {
+        font-size: 45px;
+        top: 10px;
+        left: 15px;
+    }
+    
+    .description {
+        padding: 15px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .description h3 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+    
+    .description p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    .layout,
+    .social {
+        display: none;
+    }
+    
+    /* Пятый блок */
+    .five-block {
+        height: auto;
+        min-height: 50vh;
+        padding: 80px 20px;
+        background-color: #060B1D;
+    }
+    
+    .five-main-title {
+        font-size: 2.5rem;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    .five-subtitle {
+        font-size: 2rem;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    /* Таймлайн */
+    .timeline-container {
+        padding: 40px 15px 80px;
+        background-color: #060B1D;
+        min-height: auto;
+        height: auto;
+    }
+    
+    .timeline-block::before {
+        left: 30px;
+        height: calc(100% - 40px);
+        margin-top: 40px;
+    }
+    
+    .year-title {
+        font-size: 2rem;
+        text-align: left;
+        padding-left: 60px;
+        margin-bottom: 40px;
+        line-height: 1.2;
+    }
+    
+    .timeline-event {
+        width: calc(100% - 80px);
+        margin: 30px 0 30px 60px;
+        padding: 12px;
+    }
+    
+    .timeline-event:nth-child(odd),
+    .timeline-event:nth-child(even) {
+        margin-left: 60px;
+        transform-origin: left center;
+    }
+    
+    .timeline-event:nth-child(even)::before {
+        left: -27px;
+    }
+    
+    .timeline-event::before {
+        left: -27px;
+    }
+    
+    .event-content {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    /* Карта */
+    .antique-map-container {
+        padding: 30px 15px;
+        background-color: #060B1D;
+    }
+    
+    .map-description {
+        padding-bottom: 30px;
+    }
+    
+    .map-description p {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+    
+    .map-description small {
+        font-size: 0.9em;
+    }
+    
+    .map-content-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    #antique-map {
+        width: 100%;
+        height: 300px;
+        border-width: 8px;
+    }
+    
+    .map-text-sidebar {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 20px;
+    }
+    
+    .sidebar-text-content p {
+        font-size: 1em;
+        padding: 10px 0;
+    }
+    
+    /* Листание карусели на мобильных */
+    .carousel-item {
+        pointer-events: auto;
+    }
+    
+    /* Улучшаем доступность тапов на мобильных */
+    .menu-links a,
+    button,
+    .carousel-item,
+    .nav-btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .nav-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    /* Оптимизация скролла */
+    .carousel-item .description {
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+    }
+}
+
+/* Для очень маленьких телефонов (до 360px) */
+@media (max-width: 360px) {
+    .first-block {
+        min-height: 500px;
+    }
+    
+    .main-title {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .founder-title {
+        font-size: 1.5rem;
+    }
+    
+    .five-main-title {
+        font-size: 2rem;
+    }
+    
+    .five-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .fsubtitle {
+        font-size: 1.5rem;
+    }
+    
+    .carousel-item {
+        --width: 130px;
+        --height: 180px;
+    }
+    
+    .description {
+        padding: 10px;
+    }
+    
+    .description h3 {
+        font-size: 16px;
+    }
+    
+    .description p {
+        font-size: 12px;
+    }
+}
