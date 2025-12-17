@@ -383,16 +383,12 @@ body::before {
 
 
 
-
-
-
-
-
+/* Основные стили секции */
 .four-block {
     background-image: url('image/фон_культура3.png');
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: cover;
+    background-size: contain;
     width: 100%;
     min-height: 100vh;
     position: relative;
@@ -409,9 +405,9 @@ body::before {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 65px;
+    gap: 5px;
     margin: 0 auto;
-    justify-content: center;
+    margin-bottom: 250px;
 }
 
 .section-title {
@@ -419,55 +415,33 @@ body::before {
     font-size: 80px;
     font-weight: normal;
     color: #d1d1d1;
-    text-decoration: none;
-    text-shadow: none;
-    transition: none;
     letter-spacing: 1px;
-    font-variant: normal;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     line-height: 1.1;
-    font-weight: normal;
     text-align: center;
+    margin-top: 150px;
 }
 
-/* ИСПРАВЛЕННЫЙ ГРИД ДЛЯ 3 ЭЛЕМЕНТОВ ПОСЕРЕДИНЕ */
-.ideas-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    width: 100%;
-    max-width: 900px;
-    align-items: start;
-    justify-items: center;
-    margin: 0 auto;
-    margin-top: -65px;
-    margin-bottom: 350px;
-}
-
+/* Стили для карточек */
 .idea-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    perspective: 1000px;
     position: relative;
+    margin-bottom: 150px;
 }
 
-/* 1 и 3 блоки - выше относительно центра */
+/* Позиционирование карточек */
 .idea-card:nth-child(1),
 .idea-card:nth-child(3) {
     margin-top: -20px;
 }
 
-/* 2 блок - ниже относительно центра */
 .idea-card.reversed {
     margin-top: 20px;
+    flex-direction: column-reverse;
 }
 
-/* ОБЫЧНЫЕ КАРТОЧКИ (1 и 3) */
+/* Верхняя часть карточки (обычная и перевернутая) */
 .idea-card .card-top {
     width: 200px;
     height: 180px;
@@ -478,8 +452,18 @@ body::before {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.8);
     border-bottom: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.idea-card.reversed .card-top {
+    border-radius: 0 0 100px 100px;
+    border-top: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Нижняя часть карточки */
 .idea-card .card-bottom {
     width: 200px;
     height: 180px;
@@ -494,31 +478,21 @@ body::before {
     margin-top: -1px;
 }
 
-/* ПЕРЕВЕРНУТЫЕ КАРТОЧКИ (2) */
-.idea-card.reversed {
-    flex-direction: column-reverse;
-}
-
 .idea-card.reversed .card-bottom {
     border-radius: 100px 100px 0 0;
-    border: 1px solid rgba(255, 255, 255, 0.8);
     border-bottom: none;
     border-top: 1px solid rgba(255, 255, 255, 0.8);
     margin-top: 0;
     margin-bottom: -1px;
 }
 
-.idea-card.reversed .card-top {
-    border-radius: 0 0 100px 100px;
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-top: none;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
-}
-
+/* Изображения - полное отображение */
 .idea-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover !important;
+    object-position: center;
+    display: block;
 }
 
 .idea-title {
@@ -529,6 +503,36 @@ body::before {
     padding: 0 10px;
     line-height: 1.3;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Кнопка "Подробнее" */
+.idea-card .details-btn {
+    background: rgba(255, 255, 255, 0.9);
+    color: #0B242D;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-family: 'Antikvarika', serif;
+    font-size: 1em;
+    opacity: 0;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    min-width: 140px;
+    cursor: pointer;
+}
+
+.idea-card .details-btn:hover {
+    background: #ffffff;
+    transform: translate(-50%, -50%) scale(1.05);
+    border-color: #ffffff;
+}
+
+.idea-card:hover .details-btn {
+    opacity: 1;
 }
 
 /* Эффекты при наведении */
@@ -550,36 +554,32 @@ body::before {
     transform: translateY(-5px);
 }
 
-/* Стили для кнопки "Подробнее" */
-.details-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.9);
-    color: #0B242D;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 25px;
-    font-family: 'Antikvarika', serif;
-    font-size: 1em;
-    cursor: pointer;
-    opacity: 0;
-    transition: all 0.3s ease;
-    z-index: 10;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+/* Bootstrap адаптации */
+.bootstrap-grid .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 30px !important;
+    justify-content: center !important;
 }
 
-.idea-card:hover .details-btn {
-    opacity: 1;
+.bootstrap-grid .col-auto {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
 }
 
-.details-btn:hover {
-    background: #ffffff;
-    transform: translate(-50%, -50%) scale(1.05);
+.four-block .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow: visible !important;
 }
 
-/* Стили для модального окна */
+/* Модальное окно */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -621,7 +621,6 @@ body::before {
     position: relative;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
     border: 2px solid rgba(255, 255, 255, 0.9);
-    transition: all 0.5s ease;
 }
 
 .modal-bottom {
@@ -674,6 +673,57 @@ body::before {
 
 .modal-overlay.active .modal-content {
     animation: modalAppear 0.5s ease;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .bootstrap-grid .row {
+        gap: 20px !important;
+    }
+    .idea-card .card-top,
+    .idea-card .card-bottom {
+        width: 160px !important;
+        height: 140px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .bootstrap-grid .row {
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        padding-bottom: 20px;
+        justify-content: flex-start !important;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .bootstrap-grid .row::-webkit-scrollbar {
+        height: 5px;
+    }
+    
+    .bootstrap-grid .row::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .bootstrap-grid .row::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+    }
+    
+    .idea-card .card-top,
+    .idea-card .card-bottom {
+        width: 150px !important;
+        height: 130px !important;
+    }
+    
+    .idea-card:nth-child(1),
+    .idea-card:nth-child(3),
+    .idea-card.reversed {
+        margin-top: 0 !important;
+    }
+    
+    .section-title {
+        font-size: 60px;
+    }
 }
 
 
@@ -1358,13 +1408,14 @@ h2 {
 
 
 
+/* Основные стили секции архитектуры */
 .arch-block3 {
     background-image: url('image/фон_культура5.png');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
     display: flex;
     justify-content: center;
@@ -1389,55 +1440,33 @@ h2 {
     font-size: 80px;
     font-weight: normal;
     color: #d1d1d1;
-    text-decoration: none;
-    text-shadow: none;
-    transition: none;
     letter-spacing: 1px;
-    font-variant: normal;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     line-height: 1.1;
-    font-weight: normal;
     text-align: center;
+    text-shadow: none !important;
 }
 
-/* ИСПРАВЛЕННЫЙ ГРИД ДЛЯ 3 ЭЛЕМЕНТОВ ПОСЕРЕДИНЕ */
-.ideas-grid3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    width: 100%;
-    max-width: 900px;
-    align-items: start;
-    justify-items: center;
-    margin: 0 auto;
-    margin-top: -20px;
-    margin-bottom: 30px;
-}
-
+/* Стили для карточек архитектуры */
 .idea-card3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    perspective: 1000px;
     position: relative;
+    margin-bottom: 150px;
 }
 
-/* 1 и 3 блоки - выше относительно центра */
+/* Позиционирование карточек */
 .idea-card3:nth-child(1),
 .idea-card3:nth-child(3) {
     margin-top: -20px;
 }
 
-/* 2 блок - ниже относительно центра */
 .idea-card3.reversed {
     margin-top: 20px;
+    flex-direction: column-reverse;
 }
 
-/* ОБЫЧНЫЕ КАРТОЧКИ (1 и 3) */
+/* Верхняя часть карточки */
 .idea-card3 .card-top3 {
     width: 200px;
     height: 180px;
@@ -1448,8 +1477,18 @@ h2 {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.8);
     border-bottom: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.idea-card3.reversed .card-top3 {
+    border-radius: 0 0 100px 100px;
+    border-top: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Нижняя часть карточки */
 .idea-card3 .card-bottom3 {
     width: 200px;
     height: 180px;
@@ -1464,31 +1503,22 @@ h2 {
     margin-top: -1px;
 }
 
-/* ПЕРЕВЕРНУТЫЕ КАРТОЧКИ (2) */
-.idea-card3.reversed {
-    flex-direction: column-reverse;
-}
-
 .idea-card3.reversed .card-bottom3 {
     border-radius: 100px 100px 0 0;
-    border: 1px solid rgba(255, 255, 255, 0.8);
     border-bottom: none;
     border-top: 1px solid rgba(255, 255, 255, 0.8);
     margin-top: 0;
     margin-bottom: -1px;
 }
 
-.idea-card3.reversed .card-top3 {
-    border-radius: 0 0 100px 100px;
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-top: none;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
-}
-
+/* Изображения архитектуры - полное отображение */
 .idea-image3 {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain !important;
+    object-position: center;
+    display: block;
+    object-fit: cover !important;
 }
 
 .idea-title3 {
@@ -1499,6 +1529,36 @@ h2 {
     padding: 0 10px;
     line-height: 1.3;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Кнопка "Подробнее" */
+.idea-card3 .details-btn3 {
+    background: rgba(255, 255, 255, 0.9);
+    color: #0B242D;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-family: 'Antikvarika', serif;
+    font-size: 1em;
+    opacity: 0;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    min-width: 140px;
+    cursor: pointer;
+}
+
+.idea-card3 .details-btn3:hover {
+    background: #ffffff;
+    transform: translate(-50%, -50%) scale(1.05);
+    border-color: #ffffff;
+}
+
+.idea-card3:hover .details-btn3 {
+    opacity: 1;
 }
 
 /* Эффекты при наведении */
@@ -1520,34 +1580,97 @@ h2 {
     transform: translateY(-5px);
 }
 
-/* Стили для кнопки "Подробнее" */
-.details-btn3 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.9);
-    color: #0B242D;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 25px;
-    font-family: 'Antikvarika', serif;
-    font-size: 1em;
-    cursor: pointer;
-    opacity: 0;
-    transition: all 0.3s ease;
-    z-index: 10;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+/* Bootstrap адаптации для архитектуры */
+.bootstrap-grid3 .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 30px !important;
+    justify-content: center !important;
 }
 
-.idea-card3:hover .details-btn3 {
-    opacity: 1;
+.bootstrap-grid3 .col-auto {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
 }
 
-.details-btn3:hover {
-    background: #ffffff;
-    transform: translate(-50%, -50%) scale(1.05);
+.arch-block3 .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow: visible !important;
 }
+
+/* Модальное окно для архитектуры */
+#modalOverlay3.modal-overlay {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+#modalContent3.modal-content .modal-top {
+    background: #fff;
+}
+
+#modalContent3.modal-content .modal-bottom {
+    background: linear-gradient(135deg, #050818, #101635);
+}
+
+/* Адаптивность для архитектуры */
+@media (max-width: 1200px) {
+    .bootstrap-grid3 .row {
+        gap: 20px !important;
+    }
+    .idea-card3 .card-top3,
+    .idea-card3 .card-bottom3 {
+        width: 160px !important;
+        height: 140px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .bootstrap-grid3 .row {
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        padding-bottom: 20px;
+        justify-content: flex-start !important;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .bootstrap-grid3 .row::-webkit-scrollbar {
+        height: 5px;
+    }
+    
+    .bootstrap-grid3 .row::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .bootstrap-grid3 .row::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+    }
+    
+    .idea-card3 .card-top3,
+    .idea-card3 .card-bottom3 {
+        width: 150px !important;
+        height: 130px !important;
+    }
+    
+    .idea-card3:nth-child(1),
+    .idea-card3:nth-child(3),
+    .idea-card3.reversed {
+        margin-top: 0 !important;
+    }
+    
+    .section-title3 {
+        font-size: 60px;
+    }
+}
+
+
+
 
 
 
@@ -1830,26 +1953,4 @@ h2 {
 .pietra-dorata:hover {
     background: rgba(255, 255, 255, 0.5);
     transform: scale(1.1);
-}
-
-
-
-
-
-
-
-/* Отключаем стандартное поведение меню на мобильных */
-@media (max-width: 768px) {
-    .sidebar {
-        transition: left 0.3s ease !important;
-    }
-    
-    .sidebar:hover {
-        left: -280px !important; /* Важно: отключаем hover */
-    }
-    
-    /* Скрываем старый индикатор */
-    .sidebar .menu-indicator {
-        display: none !important;
-    }
 }
