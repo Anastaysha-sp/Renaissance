@@ -1151,3 +1151,411 @@ body::before {
         width: 100%;
     }
 }
+
+
+/* ... существующий код до @media ... */
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .tests-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .section-title,
+    .instructions-title {
+        font-size: 60px;
+    }
+    
+    /* Адаптивность для интерактивного теста */
+    .drag-drop-grid {
+        gap: 20px;
+    }
+    
+    .game-map-img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .map-zone {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 992px) {
+    /* Адаптация фона первого блока */
+    .first-block {
+        background-size: cover;
+        background-position: center;
+        height: 70vh;
+    }
+    
+    /* Убираем фон второго блока на мобильных устройствах */
+    .second-block {
+        background-image: none !important;
+        background-color: #F2EED4;
+        margin-top: 50px;
+        height: auto;
+        padding: 40px 20px;
+    }
+    
+    /* Исправляем отступы для инструкции */
+    .instructions-container {
+        padding: 20px;
+    }
+    
+    .instructions-title {
+        font-size: 50px;
+        margin-bottom: 50px;
+        white-space: normal;
+        line-height: 1.2;
+    }
+    
+    .description {
+        margin-bottom: 0;
+    }
+    
+    .description p {
+        font-size: 1.1em;
+        line-height: 1.5;
+        color: #333;
+    }
+    
+    /* Адаптивность интерактивного теста */
+    .drag-drop-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .map-pins-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .map-pin {
+        width: 90%;
+        justify-content: center;
+    }
+    
+    .interactive-footer .finish-btn {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .tests-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title,
+    .instructions-title {
+        font-size: 40px;
+    }
+    
+    .main-title {
+        font-size: 4rem;
+    }
+    
+    .subtitle {
+        font-size: 3rem;
+        left: 50%;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 10px;
+    }
+    
+    .test-navigation {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-btn {
+        width: 100%;
+    }
+    
+    .question-indicator {
+        order: -1;
+    }
+    
+    .result-actions {
+        flex-direction: column;
+    }
+    
+    .result-btn {
+        width: 100%;
+    }
+    
+    /* Адаптивность для интерактивного теста */
+    .interactive-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tab-btn {
+        width: 90%;
+        margin-bottom: 5px;
+    }
+    
+    .task-title {
+        font-size: 1.3rem;
+    }
+    
+    .task-desc {
+        font-size: 0.95rem;
+        padding: 0 10px;
+    }
+    
+    .col-title {
+        font-size: 1.1rem;
+    }
+    
+    .draggable-item {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+    
+    .drop-zone {
+        min-height: 50px;
+        padding: 8px;
+    }
+    
+    .drop-zone strong {
+        font-size: 0.9rem;
+    }
+    
+    /* Адаптация карты */
+    .map-game-container {
+        max-width: 100%;
+        margin: 0 auto 15px;
+    }
+    
+    .map-zone {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .timeline-item {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+    
+    .interactive-footer {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .first-block {
+        height: 60vh;
+        margin-bottom: 30px;
+    }
+    
+    .main-title {
+        font-size: 3rem;
+        top: 75%;
+    }
+    
+    .subtitle {
+        font-size: 2.5rem;
+        top: 25%;
+    }
+    
+    .second-block {
+        margin-top: 30px;
+        padding: 30px 15px;
+    }
+    
+    .instructions-title {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+    
+    .description p {
+        font-size: 1em;
+    }
+    
+    .tests-section {
+        padding: 40px 0;
+    }
+    
+    .section-title {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    
+    /* Адаптивность модального окна */
+    .modal-content {
+        width: 98%;
+        margin: 5px;
+    }
+    
+    .modal-header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+    
+    .timer-container {
+        order: -1;
+        text-align: center;
+    }
+    
+    .modal-title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    
+    .modal-body {
+        padding: 15px;
+        max-height: 60vh;
+    }
+    
+    /* Адаптивность интерактивного теста */
+    .task-title {
+        font-size: 1.2rem;
+    }
+    
+    .task-desc {
+        font-size: 0.9rem;
+    }
+    
+    .col-title {
+        font-size: 1rem;
+    }
+    
+    .draggable-item {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+    
+    .drop-zone {
+        min-height: 45px;
+    }
+    
+    .drop-zone strong {
+        font-size: 0.85rem;
+    }
+    
+    .map-zone {
+        width: 15px;
+        height: 15px;
+        border-width: 1px;
+    }
+    
+    .map-pin {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+        width: 95%;
+    }
+    
+    .timeline-sortable {
+        padding: 15px;
+    }
+    
+    .timeline-item {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+    
+    .result-details.interactive-details-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .score-circle {
+        width: 150px;
+        height: 150px;
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .first-block {
+        height: 50vh;
+    }
+    
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 2rem;
+    }
+    
+    .instructions-title,
+    .section-title {
+        font-size: 28px;
+    }
+    
+    /* Адаптивность интерактивного теста для очень маленьких экранов */
+    .map-pins-container {
+        max-height: 200px;
+        overflow-y: auto;
+    }
+    
+    .map-pin {
+        font-size: 0.8rem;
+        padding: 5px 8px;
+    }
+    
+    .interactive-tabs {
+        gap: 5px;
+    }
+    
+    .tab-btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .draggable-item, 
+    .drop-zone {
+        font-size: 0.85rem;
+    }
+}
+
+/* Дополнительные стили для улучшения отображения на тач-устройствах */
+@media (hover: none) and (pointer: coarse) {
+    .option-btn:hover,
+    .draggable-item:hover,
+    .timeline-item:hover {
+        transform: none;
+    }
+    
+    .draggable-item,
+    .map-pin,
+    .timeline-item {
+        cursor: default;
+    }
+    
+    .draggable-item:active,
+    .map-pin:active {
+        background-color: #e2e8f0;
+    }
+    
+    .option-btn {
+        padding: 20px 15px; /* Увеличиваем для удобства тапа */
+    }
+}
+
+/* Адаптация для планшетов в портретной ориентации */
+@media (min-width: 577px) and (max-width: 768px) {
+    .first-block {
+        height: 65vh;
+    }
+    
+    .second-block {
+        height: auto;
+        min-height: 50vh;
+    }
+    
+    .map-game-container {
+        max-width: 90%;
+    }
+    
+    .map-pins-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
