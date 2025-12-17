@@ -237,3 +237,113 @@
     }
 }
 
+
+
+/* Адаптивность для интерактивного теста */
+@media (max-width: 992px) {
+    .map-pins-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .map-pin {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .drag-drop-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .zone-column,
+    .items-column {
+        width: 100%;
+    }
+    
+    .map-game-container {
+        max-width: 100%;
+    }
+    
+    .map-pins-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .timeline-item .handle {
+        align-self: flex-end;
+    }
+    
+    .interactive-footer .finish-btn {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .task-title {
+        font-size: 1.2rem;
+        padding: 0 10px;
+    }
+    
+    .task-desc {
+        font-size: 0.9rem;
+        padding: 0 15px;
+    }
+    
+    .drop-zone {
+        min-height: 45px;
+        padding: 8px;
+    }
+    
+    .draggable-item {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    
+    .map-zone {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .map-pin {
+        font-size: 0.85rem;
+        padding: 8px 10px;
+    }
+    
+    .interactive-tabs {
+        gap: 5px;
+    }
+    
+    .tab-btn {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .map-pins-container {
+        max-height: 250px;
+        overflow-y: auto;
+    }
+    
+    .map-pin {
+        font-size: 0.8rem;
+    }
+    
+    .task-title {
+        font-size: 1.1rem;
+    }
+    
+    .task-desc {
+        font-size: 0.85rem;
+    }
+}
