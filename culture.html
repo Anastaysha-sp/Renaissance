@@ -18,6 +18,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Antikvarika&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="culture_page/culture-mobile.css">
 </head>
 <body>
 
@@ -32,7 +33,7 @@
         <!-- Блок содержимого поверх фона -->
         <div class="sidebar-content">
             <div class="menu-header">
-                <img src="../main_page/image/logo.svg" alt="Логотип" class="logo">
+                <img src="main_page/image/logo.svg" alt="Логотип" class="logo">
             </div>
             <ul class="menu-links">
                 <li><a href="index.html">Главная</a></li>
@@ -82,8 +83,7 @@
     </div>
 </section>
 
-    <!-- Третий блок -->
-<!-- Четвертый блок - Ключевые новшества в живописи (стиль как в main.html) -->
+<!-- Четвертый блок - Ключевые новшества в живописи -->
 <section class="four-block">
     <div class="four-container">
         <h2 class="section-title">Ключевые новшества в живописи</h2>
@@ -96,13 +96,12 @@
                 <div class="col-auto">
                     <div class="idea-card" data-id="1">
                         <div class="card-top">
-                            <img src="culture_page/image/idea11.jpg" alt="Перспектива" class="idea-culture_page/image">
+                            <img src="culture_page/image/idea11.jpg" alt="Перспектива" class="idea-image">
                         </div>
                         <div class="card-bottom">
                             <span class="idea-title">Перспектива</span>
                         </div>
-                        <!-- Bootstrap кнопка -->
-                        <button class="details-btn btn btn-outline-light mt-3">Подробнее</button>
+                        <button class="details-btn">Подробнее</button>
                     </div>
                 </div>
                 
@@ -110,13 +109,12 @@
                 <div class="col-auto">
                     <div class="idea-card reversed" data-id="2">
                         <div class="card-top">
-                            <img src="culture_page/image/idea22.jpg" alt="Светотень" class="idea-culture_page/image">
+                            <img src="culture_page/image/idea22.jpg" alt="Светотень" class="idea-image">
                         </div>
                         <div class="card-bottom">
                             <span class="idea-title">Светотень</span>
                         </div>
-                        <!-- Bootstrap кнопка -->
-                        <button class="details-btn btn btn-outline-light mt-3">Подробнее</button>
+                        <button class="details-btn">Подробнее</button>
                     </div>
                 </div>
                 
@@ -124,13 +122,12 @@
                 <div class="col-auto">
                     <div class="idea-card" data-id="3">
                         <div class="card-top">
-                            <img src="culture_page/image/idea33.jpg" alt="Техника Сфумато" class="idea-culture_page/image">
+                            <img src="culture_page/image/idea33.jpg" alt="Техника Сфумато" class="idea-image">
                         </div>
                         <div class="card-bottom">
                             <span class="idea-title">Техника "Сфумато"</span>
                         </div>
-                        <!-- Bootstrap кнопка -->
-                        <button class="details-btn btn btn-outline-light mt-3">Подробнее</button>
+                        <button class="details-btn">Подробнее</button>
                     </div>
                 </div>
                 
@@ -138,17 +135,21 @@
         </div>
     </div>
 </section>
-    
-    <!-- Модальные окна для каждой карточки -->
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal-content" id="modalContent"> <!-- Добавлен id -->
-            <div class="modal-top" id="modalTop"></div>
-            <div class="modal-description" id="modalDescription">
-                <!-- Описание будет добавляться через JS -->
-            </div>
-            <div class="modal-bottom" id="modalBottom"></div>
+
+<!-- Модальное окно -->
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content" id="modalContent">
+        <div class="modal-top" id="modalTop">
+            <img src="" alt="" class="idea-image" id="modalImage">
+        </div>
+        <div class="modal-description" id="modalDescription">
+            <!-- Описание будет добавляться через JS -->
+        </div>
+        <div class="modal-bottom" id="modalBottom">
+            <span class="idea-title" id="modalTitle"></span>
         </div>
     </div>
+</div>
 
 
     <section class="artists-section">
@@ -558,21 +559,21 @@
             
             <!-- Правая часть: фотографии с настраиваемыми отступами -->
             <div class="right-section">
-                <div class="culture_page/image-wrapper culture_page/image-1">
-                    <img src="culture_page/image/Maskgroup1.png" alt="Архитектура 1" class="arch-culture_page/image">
+                <div class="image-wrapper image-1">
+                    <img src="culture_page/image/Maskgroup1.png" alt="Архитектура 1" class="arch-image">
                 </div>
-                <div class="culture_page/image-wrapper culture_page/image-2">
-                    <img src="culture_page/image/Maskgroup2.png" alt="Архитектура 2" class="arch-culture_page/image">
+                <div class="image-wrapper image-2">
+                    <img src="culture_page/image/Maskgroup2.png" alt="Архитектура 2" class="arch-image">
                 </div>
-                <div class="culture_page/image-wrapper culture_page/image-3">
-                    <img src="culture_page/image/Maskgroup3.png" alt="Архитектура 3" class="arch-culture_page/image">
+                <div class="image-wrapper image-3">
+                    <img src="culture_page/image/Maskgroup3.png" alt="Архитектура 3" class="arch-image">
                 </div>
             </div>
         </div>
     </section>
 
 
-    <!-- Третий блок архитектуры - Основные идеи архитектуры -->
+<!-- Третий блок архитектуры - Основные идеи архитектуры -->
 <section class="arch-block3">
     <div class="arch-container3">
         <h2 class="section-title3">Основные идеи архитектуры</h2>
@@ -585,13 +586,12 @@
                 <div class="col-auto">
                     <div class="idea-card3" data-id="1">
                         <div class="card-top3">
-                            <img src="culture_page/image/idea111.png" alt="Симметрия и пропорция" class="idea-culture_page/image3">
+                            <img src="culture_page/image/idea111.png" alt="Симметрия и пропорция" class="idea-image3">
                         </div>
                         <div class="card-bottom3">
                             <span class="idea-title3">Симметрия и пропорция</span>
                         </div>
-                        <!-- Bootstrap кнопка -->
-                        <button class="details-btn3 btn btn-outline-light mt-3">Подробнее</button>
+                        <button class="details-btn3">Подробнее</button>
                     </div>
                 </div>
                 
@@ -599,13 +599,12 @@
                 <div class="col-auto">
                     <div class="idea-card3 reversed" data-id="2">
                         <div class="card-top3">
-                            <img src="culture_page/image/idea222.png" alt="Ордерная система" class="idea-culture_page/image3">
+                            <img src="culture_page/image/idea222.png" alt="Ордерная система" class="idea-image3">
                         </div>
                         <div class="card-bottom3">
                             <span class="idea-title3">Ордерная система</span>
                         </div>
-                        <!-- Bootstrap кнопка -->
-                        <button class="details-btn3 btn btn-outline-light mt-3">Подробнее</button>
+                        <button class="details-btn3">Подробнее</button>
                     </div>
                 </div>
                 
@@ -613,13 +612,12 @@
                 <div class="col-auto">
                     <div class="idea-card3" data-id="3">
                         <div class="card-top3">
-                            <img src="culture_page/image/idea333.png" alt="Купольное перекрытие" class="idea-culture_page/image3">
+                            <img src="culture_page/image/idea333.png" alt="Купольное перекрытие" class="idea-image3">
                         </div>
                         <div class="card-bottom3">
                             <span class="idea-title3">Купольное перекрытие</span>
                         </div>
-                        <!-- Bootstrap кнопка -->
-                        <button class="details-btn3 btn btn-outline-light mt-3">Подробнее</button>
+                        <button class="details-btn3">Подробнее</button>
                     </div>
                 </div>
                 
@@ -628,16 +626,20 @@
     </div>
 </section>
 
-    <!-- Модальное окно для второго блока архитектуры -->
-    <div class="modal-overlay" id="modalOverlay3">
-        <div class="modal-content" id="modalContent3">
-            <div class="modal-top" id="modalTop3"></div>
-            <div class="modal-description" id="modalDescription3">
-                <!-- Описание будет добавляться через JS -->
-            </div>
-            <div class="modal-bottom" id="modalBottom3"></div>
+<!-- Модальное окно для архитектуры -->
+<div class="modal-overlay" id="modalOverlay3">
+    <div class="modal-content" id="modalContent3">
+        <div class="modal-top" id="modalTop3">
+            <img src="" alt="" class="idea-image3" id="modalImage3">
+        </div>
+        <div class="modal-description" id="modalDescription3">
+            <!-- Описание будет добавляться через JS -->
+        </div>
+        <div class="modal-bottom" id="modalBottom3">
+            <span class="idea-title3" id="modalTitle3"></span>
         </div>
     </div>
+</div>
     
 
 <!-- Блок со слайдером "Знаковые постройки" -->
@@ -776,6 +778,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
-
