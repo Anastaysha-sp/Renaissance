@@ -1047,51 +1047,157 @@ body::before {
 
 
 
+/* ==================== АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (до 768px) ==================== */
 
-/*  --------------------------------------ДЛЯ МОБИЛЬНОЙ ВЕРСИИ--------------------------------------*/
-/* ---------------------------------------ДЛЯ МОБИЛЬНОЙ ВЕРСИИ------------------------------------- */
-/* ---------------------------------------ДЛЯ МОБИЛЬНОЙ ВЕРСИИ--------------------------------------- */
+/* ==================== АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (до 768px) ==================== */
 
-/* АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНОЙ ВЕРСИИ */
-
-@media (max-width: 1200px) {
-    .wrapper {
-        width: 100%;
-        padding: 0 20px;
+@media (max-width: 768px) {
+    /* 1. Общие настройки */
+    body {
+        overflow-x: hidden;
+        background-color: #F2EED4;
     }
     
-    /* Карточки идей для планшета */
-    .idea-card .card-top,
-    .idea-card .card-bottom {
-        width: 160px;
-        height: 140px;
+    /* 2. Курсор скрываем на мобильных */
+    .custom-cursor,
+    .cursor-follower,
+    .artists-light-cursor {
+        display: none !important;
     }
     
-    .ideas-grid {
-        gap: 15px;
+    /* 3. МЕНЮ - полностью перерабатываем */
+    .sidebar {
+        width: 280px;
+        left: -280px;
+        z-index: 1000;
     }
-}
-
-@media (max-width: 992px) {
-    /* Заголовки */
+    
+    .sidebar.active {
+        left: 0;
+    }
+    
+    .menu-indicator {
+        position: fixed;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 50px;
+        background: rgba(197, 196, 196, 0.9);
+        border-radius: 0 30px 30px 0;
+        z-index: 1001;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        pointer-events: auto;
+        opacity: 1 !important;
+    }
+    
+    .menu-indicator span {
+        font-size: 1.2rem;
+        color: #333;
+    }
+    
+    .menu-indicator.active {
+        background: rgba(0, 0, 0, 0.8);
+        left: 280px;
+    }
+    
+    .menu-indicator.active span {
+        color: white;
+    }
+    
+    .sidebar:hover .menu-indicator {
+        opacity: 1 !important;
+    }
+    
+    /* Убираем hover-эффект на мобильных */
+    .sidebar:hover {
+        left: -280px;
+    }
+    
+    .menu-links a {
+        font-size: 20px;
+        padding: 10px;
+    }
+    
+    /* Область для активации меню - убираем на мобильных */
+    body::before {
+        display: none;
+    }
+    
+    /* 4. Первый блок - оставляем фон, адаптируем */
+    .first-block {
+        height: 60vh;
+        margin-bottom: 40px;
+        background-image: url('image/fon_politik1.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
     .main-title {
-        font-size: 6rem;
+        font-size: 3.5rem;
         top: 58%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 90%;
     }
     
     .subtitle {
-        font-size: 5rem;
+        font-size: 3rem;
         top: 42%;
-        left: 49%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 90%;
     }
     
-    .cap .header,
-    .section-title,
-    .section-title1 {
-        font-size: 60px;
+    /* 5. Второй блок - убираем фон, меняем стили */
+    .second-block {
+        height: auto;
+        min-height: 40vh;
+        background-image: none;
+        background-color: #F2EED4;
+        padding: 40px 20px;
     }
     
-    /* Слайдер правителей */
+    .description p {
+        font-size: 1.1rem;
+        padding: 0 10px;
+        line-height: 1.6;
+        color: #333;
+        font-family: 'Antikvarika', serif;
+        text-align: center;
+    }
+    
+    /* 6. Третий блок - слайдер */
+    .third-block {
+        padding: 20px 0;
+        background-color: #F2EED4;
+    }
+    
+    .third-block::before {
+        display: none;
+    }
+    
+    .wrapper {
+        width: 100%;
+        padding: 0 15px;
+    }
+    
+    .cap .header {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        white-space: normal;
+        text-align: center;
+        line-height: 1.2;
+        color: #140606;
+    }
+    
     .body {
         flex-direction: column;
         min-height: auto;
@@ -1105,479 +1211,27 @@ body::before {
     
     .content {
         width: 100%;
-        border-left: none;
-        border-top: 1px solid #40362e;
-        padding: 25px 15px;
-        margin-right: 0;
         height: auto;
         max-height: none;
-    }
-    
-    /* Карточки идей - адаптация как в культуре */
-    .ideas-grid {
-        display: flex !important;
-        flex-direction: row !important;
-        overflow-x: auto !important;
-        overflow-y: hidden !important;
-        flex-wrap: nowrap !important;
-        gap: 20px !important;
-        padding: 20px 10px !important;
-        margin-top: 20px !important;
-        -webkit-overflow-scrolling: touch !important;
-        scrollbar-width: thin !important;
-        max-width: 100% !important;
-        justify-content: flex-start !important;
-    }
-    
-    .ideas-grid::-webkit-scrollbar {
-        height: 4px !important;
-    }
-    
-    .ideas-grid::-webkit-scrollbar-track {
-        background: rgba(255, 255, 255, 0.1) !important;
-        border-radius: 10px !important;
-    }
-    
-    .ideas-grid::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.3) !important;
-        border-radius: 10px !important;
-    }
-    
-    .idea-card {
-        flex: 0 0 auto !important;
-        margin-bottom: 20px !important;
-    }
-    
-    .idea-card:nth-child(1),
-    .idea-card:nth-child(3) {
-        margin-top: 0 !important;
-    }
-    
-    .idea-card:nth-child(2),
-    .idea-card:nth-child(4) {
-        margin-top: 0 !important;
-    }
-    
-    /* Отменяем перевернутые карточки на мобильных */
-    .idea-card.reversed {
-        flex-direction: column !important;
-    }
-    
-    .idea-card.reversed .card-bottom {
-        border-radius: 0 0 100px 100px !important;
-        border-top: none !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.8) !important;
-    }
-    
-    .idea-card.reversed .card-top {
-        border-radius: 100px 100px 0 0 !important;
-        border-bottom: none !important;
-        border-top: 1px solid rgba(255, 255, 255, 0.8) !important;
-    }
-    
-    /* Изображения в карточках - полное отображение */
-    .idea-image {
-        object-fit: contain !important;
-        padding: 5px;
-    }
-    
-    .idea-card .card-top {
-        background: #f5f5f5 !important;
-    }
-    
-    /* Блок художников */
-    .artist-block {
-        flex-direction: column !important;
-        gap: 30px;
-        margin-bottom: 60px;
-    }
-    
-    .artist-image-wrapper {
-        max-width: 100%;
-        height: 300px;
-    }
-    
-    .artist-content {
-        padding: 20px;
-    }
-    
-    .artist-name {
-        font-size: 2.5rem;
-    }
-}
-
-/* Мобильная версия - только для телефонов */
-@media screen and (max-width: 768px) and (hover: none) and (pointer: coarse) {
-    /* Основные настройки для телефонов */
-    body {
-        overflow-x: hidden;
-        -webkit-tap-highlight-color: transparent;
-    }
-    
-    /* Скрываем кастомные курсоры на телефонах */
-    .custom-cursor,
-    .cursor-follower,
-    .artists-light-cursor {
-        display: none !important;
-    }
-    
-    /* ===== МЕНЮ - CSS-ONLY РЕШЕНИЕ ===== */
-    .sidebar {
-        position: fixed;
-        width: 85%;
-        max-width: 300px;
-        height: 100vh;
-        left: -100%;
-        top: 0;
-        background: rgba(0, 0, 0, 0.353);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        z-index: 9998;
-        transition: left 0.4s ease;
-        overflow-y: auto;
-        box-shadow: 5px 0 25px rgba(0, 0, 0, 0.5);
-    }
-    
-    /* Содержимое меню с Flexbox для равномерного распределения */
-    .sidebar-content {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-    
-    /* Шапка меню */
-    .menu-header {
-        flex-shrink: 0;
-        text-align: center;
-        padding: 15px 0 25px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    }
-    
-    .logo {
-        max-width: 70px;
-        height: auto;
-        filter: brightness(0) invert(1);
-    }
-    
-    /* Основное меню - занимает всё доступное пространство */
-    .menu-links {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around; /* Равномерное распределение */
-        margin: 0;
-        padding: 20px 0;
-        list-style: none;
-        min-height: 300px; /* Минимальная высота для меню */
-    }
-    
-    .menu-links li {
-        text-align: center;
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 50px;
-        position: relative;
-    }
-    
-    /* Убираем разделители между элементами */
-    .menu-links li:not(:last-child)::after {
-        display: none;
-    }
-    
-    /* Стили ссылок */
-    .menu-links a {
-        font-size: 22px;
-        color: white;
-        text-decoration: none;
-        letter-spacing: 1.5px;
-        font-weight: normal;
-        padding: 12px 25px;
-        border-radius: 10px;
-        transition: all 0.3s ease;
-        display: block;
-        width: 100%;
-        max-width: 250px;
-        text-align: center;
-    }
-    
-    /* Эффект нажатия для мобильных */
-    .menu-links a:active {
-        background: rgba(255, 255, 255, 0.15);
-        transform: scale(0.98);
-    }
-    
-    /* ===== ИНДИКАТОР/КНОПКА МЕНЮ ===== */
-    .menu-indicator {
-        position: fixed;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 45px;
-        height: 70px;
-        background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(30, 30, 30, 0.9));
-        border-radius: 0 12px 12px 0;
-        cursor: pointer;
-        z-index: 9999;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 1;
-        visibility: visible;
-        border: 1px solid rgba(255, 255, 255, 0.2);
         border-left: none;
-        box-shadow: 3px 0 15px rgba(0, 0, 0, 0.4);
-        transition: all 0.3s ease;
-        -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
+        border-top: 2px solid #40362e;
+        padding: 20px 10px;
+        margin-right: 0;
+        overflow-y: visible;
+        background-color: rgba(255, 255, 255, 0.1);
     }
     
-    .menu-indicator span {
-        font-size: 22px;
-        color: white;
-        font-weight: bold;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-    }
-    
-    /* Эффект нажатия для индикатора */
-    .menu-indicator:active {
-        background: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(50, 50, 50, 0.9));
-        width: 50px;
-        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.6);
-    }
-    
-    /* ===== МАГИЯ CSS-ONLY: ОТКРЫТИЕ МЕНЮ ПРИ НАВЕДЕНИИ НА ИНДИКАТОР ===== */
-    .menu-indicator:hover + .sidebar,
-    .menu-indicator:focus + .sidebar,
-    .menu-indicator:active + .sidebar,
-    .sidebar:hover,
-    .sidebar:focus-within {
-        left: 0 !important;
-    }
-    
-    /* Прячем индикатор когда меню открыто */
-    .menu-indicator:hover + .sidebar ~ .menu-indicator,
-    .menu-indicator:focus + .sidebar ~ .menu-indicator,
-    .menu-indicator:active + .sidebar ~ .menu-indicator,
-    .sidebar:hover ~ .menu-indicator,
-    .sidebar:focus-within ~ .menu-indicator {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-    }
-    
-    /* Кнопка закрытия (крестик) в правом верхнем углу меню */
-    .sidebar::before {
-        content: '×';
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        width: 35px;
-        height: 35px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px;
-        color: white;
-        cursor: pointer;
-        z-index: 10000;
-        transition: all 0.3s ease;
-        font-weight: bold;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    
-    .sidebar::before:active {
-        background: rgba(255, 255, 255, 0.2);
-        transform: scale(0.95);
-    }
-    
-    /* Закрытие меню при клике на крестик или вне меню */
-    .sidebar:focus-within::before:active,
-    .sidebar:hover::before:active {
-        transform: scale(0.95) rotate(90deg);
-    }
-}
-
-/* Для очень маленьких телефонов (iPhone SE и подобные) */
-@media screen and (max-width: 375px) and (hover: none) and (pointer: coarse) {
-    .sidebar {
-        width: 90%;
-        max-width: none;
-    }
-    
-    .sidebar-content {
-        padding: 15px;
-    }
-    
-    .menu-links a {
-        font-size: 18px;
-        padding: 10px 20px;
-        max-width: 100%;
-    }
-    
-    .menu-links li {
-        min-height: 45px;
-    }
-    
-    .logo {
-        max-width: 60px;
-    }
-    
-    .menu-indicator {
-        width: 40px;
-        height: 65px;
-    }
-    
-    .menu-indicator span {
-        font-size: 20px;
-    }
-}
-
-/* Для ландшафтной ориентации телефонов */
-@media screen and (max-height: 500px) and (orientation: landscape) and (hover: none) and (pointer: coarse) {
-    .sidebar-content {
-        padding: 15px;
-        flex-direction: row;
-        align-items: center;
-    }
-    
-    .menu-header {
-        flex: 0 0 100px;
-        padding: 0 20px 0 0;
-        border-bottom: none;
-        border-right: 1px solid rgba(255, 255, 255, 0.15);
-        height: 80%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .logo {
-        max-width: 50px;
-    }
-    
-    .menu-links {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-        padding: 0 15px;
-    }
-    
-    .menu-links li {
-        flex: 0 0 calc(33.333% - 10px);
-        min-height: 60px;
-    }
-    
-    .menu-links a {
-        font-size: 16px;
-        padding: 8px 12px;
-    }
-    
-    .menu-indicator {
-        height: 50px;
-        width: 35px;
-        top: 20px;
-        transform: none;
-    }
-}
-
-/* Для планшетов - отключаем мобильные стили */
-@media screen and (min-width: 769px) or (hover: hover) {
-    .menu-indicator {
-        display: none !important;
-    }
-    
-    .sidebar {
-        width: 280px !important;
-        left: -260px !important;
-        height: 550px !important;
-    }
-    
-    /* Возвращаем оригинальное поведение для десктопов/планшетов */
-    .sidebar:hover {
-        left: 0 !important;
-    }
-    
-    .sidebar::before {
-        display: none !important;
-    }
-}
-    
-
-
-    
-    /* Фоны блоков (убираем все кроме первого) */
-    .second-block,
-    .four-block,
-    .artists-section {
-        background-image: none !important;
-        background-color: #F2EED4;
-    }
-    
-    .third-block::before {
-        content: none;
-    }
-    
-    /* Адаптация фона первого блока */
-    .first-block {
-        background-image: url('image/fon_politik1.png') !important;
-        background-size: auto 100% !important;
-        background-position: center center !important;
-        margin-bottom: 40px;
-        min-height: 70vh !important;
-        height: auto !important;
-    }
-    
-    .rama {
-        display: none !important;
-    }
-
-    .main-title {
-        font-size: 2.5rem !important;
-        top: 57%;
-    }
-    
-    .subtitle {
-        font-size: 3.8rem;
-        top: 43%;
-        left: 49%;
-    }
-    
-    /* Второй блок */
-    .second-block {
-        height: auto;
-        min-height: auto;
-        padding: 40px 20px;
-    }
-    
-    .description p {
-        font-size: 1.1em;
-        padding: 0 15px;
-        color: #333 !important;
-    }
-    
-    /* Третий блок */
-    .third-block {
-        padding: 40px 20px;
-        min-height: auto;
-        background-color: #F2EED4;
-    }
-    
-    .cap .header {
-        font-size: 48px;
-        margin-bottom: 40px;
-        white-space: normal;
+    .body .header {
+        font-size: 1.5rem;
         text-align: center;
-        color: #140606;
+        color: #352b22;
     }
     
-    .carousel-container {
-        height: 250px;
+    .body .description {
+        font-size: 1rem;
+        line-height: 1.5;
+        text-align: justify;
+        color: #40362e;
     }
     
     .ruler {
@@ -1585,106 +1239,106 @@ body::before {
         height: 230px;
     }
     
-    .body .header {
-        font-size: 18px;
-    }
-    
-    .body .description {
-        font-size: 15px;
-        line-height: 1.5;
-        color: #40362e;
-    }
-    
-    /* Четвертый блок */
+    /* 7. Четвертый блок - убираем фон */
     .four-block {
-        padding: 40px 20px;
-        min-height: auto;
         margin-top: 50px;
+        padding: 30px 0;
+        background-image: none;
+        background-color: #F2EED4;
     }
     
     .four-container {
+        width: 100%;
+        padding: 0 15px;
         gap: 30px;
-        margin-bottom: 50px;
     }
     
     .section-title {
-        font-size: 48px;
+        font-size: 2.5rem;
         margin-top: 0;
         white-space: normal;
         text-align: center;
+        line-height: 1.2;
         color: #140606;
     }
     
-    /* Карточки на мобильных - горизонтальный скролл */
     .ideas-grid {
-        padding: 20px 5px !important;
-        gap: 15px !important;
-        margin-top: 10px !important;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        max-width: 100%;
     }
     
-    .idea-card {
-        margin-bottom: 10px !important;
+    .idea-card:nth-child(1),
+    .idea-card:nth-child(2),
+    .idea-card:nth-child(3),
+    .idea-card:nth-child(4) {
+        margin-top: 0;
     }
     
     .idea-card .card-top,
     .idea-card .card-bottom {
-        width: 160px !important;
-        height: 140px !important;
+        width: 140px;
+        height: 130px;
     }
     
-    .idea-image{
-        object-fit: cover !important;
+    .idea-title {
+        font-size: 1rem;
+        padding: 0 5px;
     }
-
-    /* Кнопка подробнее */
+    
     .details-btn {
-        padding: 10px 20px;
-        font-size: 0.9em;
-        min-width: 120px;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        background: rgba(255, 255, 255, 0.95);
+        color: #0B242D;
     }
     
-    /* Модальное окно */
-    .modal-top,
-    .modal-bottom {
-        width: 200px;
-        height: 100px;
-        border-radius: 100px 100px 0 0;
-    }
-    
-    .modal-bottom {
-        border-radius: 0 0 100px 100px;
-    }
-    
-    .modal-bottom .idea-title {
-        font-size: 1.4em;
-    }
-    
-    .modal-description {
-        padding: 25px;
-        font-size: 1em;
-        margin: 15px 0;
-    }
-    
-    /* Блок художников */
+    /* 8. Блок с ключевыми фигурами - убираем фон */
     .artists-section {
-        padding: 40px 20px;
+        padding: 40px 0;
         margin-top: 50px;
         min-height: auto;
-    }
-    
-    .artists-container {
-        padding: 0 10px;
+        background-image: none;
+        background-color: #F2EED4;
     }
     
     .section-title1 {
-        font-size: 36px;
+        font-size: 2.5rem;
+        padding: 0 15px;
         margin-bottom: 30px;
+        white-space: normal;
+        line-height: 1.2;
         color: #140606;
     }
     
+    .artist-block {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 60px;
+        padding: 0 15px;
+    }
+    
+    .artist-block.reversed {
+        flex-direction: column;
+    }
+    
+    .artist-image-wrapper {
+        max-width: 100%;
+        height: 300px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .artist-content {
+        padding: 0;
+    }
+    
     .artist-name {
-        font-size: 2rem;
+        font-size: 2.2rem;
         margin-bottom: 15px;
+        white-space: normal;
+        text-align: center;
         color: #211919;
     }
     
@@ -1693,225 +1347,131 @@ body::before {
         padding-left: 15px;
         margin-bottom: 15px;
         color: #211919;
+        border-left: 2px solid #555;
     }
     
     .artist-description {
         font-size: 1rem;
-        line-height: 1.6;
+        text-align: left;
         color: #211919;
     }
     
-    /* Кнопки */
-    .view-paintings-btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 576px) {
-    /* Очень маленькие экраны */
-    .main-title {
-        font-size: 3.5rem;
-        top: 56%;
-    }
-    
-    .subtitle {
-        font-size: 3rem;
-        top: 44%;
-        left: 50%;
-    }
-    
-    .cap .header,
-    .section-title,
-    .section-title1 {
-        font-size: 36px;
-    }
-    
-    /* Карточки идей на маленьких экранах */
-    .ideas-grid {
-        gap: 12px !important;
-        padding: 15px 5px !important;
-    }
-    
-    .idea-card .card-top,
-    .idea-card .card-bottom {
-        width: 140px !important;
-        height: 120px !important;
-    }
-    
-    .idea-title {
-        font-size: 1em;
-    }
-    
-    /* Правители */
-    .ruler {
-        width: 150px;
-        height: 190px;
-    }
-    
-    /* Блок художников */
-    .artist-image-wrapper {
-        height: 250px;
-    }
-    
-    .artist-name {
-        font-size: 1.8rem;
-    }
-    
-    /* Модальное окно */
+    /* 9. Модальные окна */
     .modal-top,
     .modal-bottom {
-        width: 150px;
-        height: 80px;
+        width: 200px;
+        height: 100px;
     }
     
     .modal-description {
         padding: 20px;
-        font-size: 0.95em;
+        font-size: 1rem;
+        margin: 10px 0;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+    }
+    
+    /* 10. Улучшаем отступы и размеры текста */
+    * {
+        cursor: auto !important;
+    }
+    
+    h1, h2, h3, h4 {
+        word-wrap: break-word;
+    }
+    
+    /* 11. Отключаем анимации для первого блока */
+    @keyframes fade-glow {
+        from {
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+        }
+        to {
+            box-shadow: 0px 0px 15px 8px rgba(0, 0, 0, 0.25);
+        }
+    }
+    
+    .first-block {
+        animation: fade-glow 3s infinite alternate;
     }
 }
 
-@media (max-width: 400px) {
-    /* Минимальные экраны */
-    .first-block {
-        min-height: 60vh !important;
-    }
-    
+/* ==================== ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ ОЧЕНЬ МАЛЕНЬКИХ ЭКРАНОВ (до 480px) ==================== */
+@media (max-width: 480px) {
     .main-title {
         font-size: 2.8rem;
-        top: 55%;
+        top: 60%;
     }
     
     .subtitle {
-        font-size: 2.4rem;
-        top: 45%;
+        font-size: 2.5rem;
+        top: 40%;
     }
     
     .cap .header,
     .section-title,
     .section-title1 {
-        font-size: 28px;
+        font-size: 2rem;
     }
     
-    /* Карточки для самых маленьких экранов */
     .ideas-grid {
-        gap: 10px !important;
-        padding: 10px 5px !important;
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
     
     .idea-card .card-top,
     .idea-card .card-bottom {
-        width: 120px !important;
-        height: 100px !important;
+        width: 180px;
+        height: 150px;
     }
     
-    .idea-title {
-        font-size: 0.85em;
-        padding: 0 5px;
+    .artist-name {
+        font-size: 2rem;
     }
     
-    /* Кнопка подробнее */
-    .details-btn {
-        padding: 6px 12px;
-        font-size: 0.75em;
-        min-width: 90px;
+    .ruler {
+        width: 160px;
+        height: 200px;
+    }
+    
+    .carousel-container {
+        height: 270px;
     }
 }
 
-/* Особенности для горизонтальной ориентации телефона */
-@media (max-height: 600px) and (orientation: landscape) {
+/* ==================== ГОРИЗОНТАЛЬНАЯ ОРИЕНТАЦИЯ ==================== */
+@media (max-width: 768px) and (orientation: landscape) {
     .first-block {
-        min-height: 60vh !important;
-        height: auto !important;
+        height: 100vh;
     }
     
-    .second-block,
-    .four-block,
-    .artists-section {
-        min-height: auto;
+    .main-title {
+        font-size: 2.8rem;
+    }
+    
+    .subtitle {
+        font-size: 2.5rem;
     }
     
     .artist-block {
-        margin-bottom: 30px;
+        flex-direction: row;
+        gap: 20px;
+    }
+    
+    .artist-block.reversed {
+        flex-direction: row-reverse;
     }
     
     .artist-image-wrapper {
         height: 200px;
+        max-width: 35%;
     }
     
-    /* Карточки в горизонтальной ориентации */
-    .ideas-grid {
-        padding: 10px 5px !important;
-        gap: 15px !important;
+    .artist-content {
+        flex: 1;
+        padding: 0 10px;
     }
     
-    .idea-card .card-top,
-    .idea-card .card-bottom {
-        width: 130px !important;
-        height: 110px !important;
-    }
-}
-
-/* Поддержка touch устройств */
-@media (hover: none) and (pointer: coarse) {
-    .idea-card:hover .details-btn,
-    .idea-card:hover .card-top,
-    .idea-card:hover .card-bottom {
-        transform: none;
-    }
-    
-    .details-btn {
-        opacity: 0.7;
-    }
-    
-    .ruler:hover {
-        transform: none;
-    }
-    
-    .artist-image-wrapper:hover {
-        transform: none;
-    }
-    
-    /* Улучшаем touch-интерфейс */
-    .details-btn,
-    .view-paintings-btn,
-    button {
-        min-height: 44px;
-        min-width: 44px;
-    }
-    
-    .menu-links a {
-        padding: 15px 5px;
-    }
-}
-
-/* Анимации для мобильных устройств */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
-
-/* Fix для карточек на мобильных */
-@media (max-width: 768px) {
-    .idea-card .details-btn {
-        position: absolute !important;
-        top: 50% !important;
-        left: 50% !important;
-        transform: translate(-50%, -50%) !important;
-    }
-    
-    .idea-card:hover .details-btn {
-        opacity: 0.7 !important;
-    }
-    
-    /* Центрирование карточек по горизонтали при скролле */
-    .ideas-grid::after {
-        content: '';
-        min-width: 10px;
+    .artist-name {
+        font-size: 1.8rem;
     }
 }
