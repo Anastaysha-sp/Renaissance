@@ -48,6 +48,76 @@ document.addEventListener('mouseup', () => {
 
 
 
+// ==================== МОБИЛЬНОЕ МЕНЮ ====================
+document.addEventListener('DOMContentLoaded', function() {
+    const menuIndicator = document.querySelector('.menu-indicator');
+    const sidebar = document.querySelector('.sidebar');
+    
+    // Проверяем мобильное устройство
+    function isMobile() {
+        return window.innerWidth <= 768;
+    }
+    
+    // Функция управления меню
+    function toggleMenu() {
+        sidebar.classList.toggle('active');
+        menuIndicator.classList.toggle('active');
+    }
+    
+    // Обработчик для индикатора меню
+    if (menuIndicator) {
+        menuIndicator.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleMenu();
+        });
+    }
+    
+    // Закрытие меню при клике вне его
+    document.addEventListener('click', function(e) {
+        if (sidebar.classList.contains('active') && isMobile()) {
+            if (!sidebar.contains(e.target) && !menuIndicator.contains(e.target)) {
+                sidebar.classList.remove('active');
+                menuIndicator.classList.remove('active');
+            }
+        }
+    });
+    
+    // Закрытие меню при клике на ссылку
+    const menuLinks = document.querySelectorAll('.menu-links a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (isMobile()) {
+                sidebar.classList.remove('active');
+                menuIndicator.classList.remove('active');
+            }
+        });
+    });
+    
+    // Адаптация на изменение размера окна
+    window.addEventListener('resize', function() {
+        if (!isMobile()) {
+            // На десктопе сбрасываем активное состояние
+            sidebar.classList.remove('active');
+            if (menuIndicator) {
+                menuIndicator.classList.remove('active');
+            }
+        }
+    });
+    
+    // На мобильных отключаем hover-эффекты для меню
+    if (isMobile()) {
+        // Отключаем стандартное поведение hover
+        sidebar.style.pointerEvents = 'auto';
+    }
+});
+
+
+
+
+
+
+
 // Данные о правителях
 const rulers = [
     {
