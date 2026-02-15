@@ -314,6 +314,82 @@
     </div>
 </section>
 
+<!-- Плашка согласия с cookie -->
+<div class="cookie-notification" id="cookie-notification">
+    <div class="cookie-notification__header">Мы используем Яндекс Метрику</div>
+    <div class="cookie-notification__body">
+        <p>Мы собираем обезличенные данные с помощью сервиса Яндекс.Метрика (cookies, IP-адрес, данные об устройствах), чтобы анализировать поведение посетителей и улучшать работу сайта. Подробнее — в <a href="/privacy-policy" target="_blank">Политике конфиденциальности</a>.</p>
+    </div>
+    <div class="cookie-notification__buttons">
+        <button class="cookie-notification__button" id="cookie-yes">Я согласен</button>
+    </div>
+</div>
+
+<!-- Библиотека для работы с cookie -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.2/js.cookie.min.js"></script>
+
+<script>
+(function() {
+    // Проверяем, есть ли уже согласие в cookies
+    if (Cookies.get('analytics_agreed')) {
+        // Если согласие уже было, сразу загружаем Метрику
+        loadYandexMetrica();
+        hideNotification();
+    } else {
+        // Если согласия нет, показываем плашку
+        showNotification();
+    }
+
+    // Обработчик клика по кнопке "Я согласен"
+    document.getElementById('cookie-yes').addEventListener('click', function() {
+        // Запоминаем согласие на год
+        Cookies.set('analytics_agreed', '1', { expires: 365 });
+        // Загружаем Метрику
+        loadYandexMetrica();
+        // Прячем плашку
+        hideNotification();
+    });
+
+    // Функция загрузки Яндекс.Метрики (ВАШ КОД СЧЕТЧИКА)
+    function loadYandexMetrica() {
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106841481', 'ym');
+
+        ym(106841481, 'init', {
+            ssr:true, 
+            webvisor:true, 
+            clickmap:true, 
+            ecommerce:"dataLayer", 
+            referrer: document.referrer, 
+            url: location.href, 
+            accurateTrackBounce:true, 
+            trackLinks:true
+        });
+        
+        console.log('Яндекс.Метрика загружена с согласия пользователя');
+    }
+
+    // Функция для показа плашки
+    function showNotification() {
+        document.getElementById('cookie-notification').classList.remove('cookie-notification_hidden');
+    }
+
+    // Функция для скрытия плашки
+    function hideNotification() {
+        document.getElementById('cookie-notification').classList.add('cookie-notification_hidden');
+    }
+})();
+</script>
+
+<!-- Нос крипт для отображения, если JavaScript отключен -->
+<noscript>
+    <div><img src="https://mc.yandex.ru/watch/106841481" style="position:absolute; left:-9999px;" alt="" /></div>
+</noscript>
+    
 <script src="main_page/main.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
