@@ -624,9 +624,9 @@ function loadQuestion(questionIndex) {
                         Вперед
                     </button>
                 ` : `
-                    <button class="nav-btn finish-btn" onclick="finishTest()">
-                        Завершить тест
-                    </button>
+                        <button class="nav-btn finish-btn" onclick="finishTest(); ym(106841481,'reachGoal','test_complete');">
+                            Завершить тест
+                        </button>
                 `}
             </div>
         </div>
@@ -1071,4 +1071,5 @@ window.goToQuestion = goToQuestion;
 window.finishTest = finishTest;
 window.restartTest = restartTest;
 window.closeTestModal = closeTestModal;
+
 
