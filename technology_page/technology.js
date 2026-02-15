@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Загрузка изображения карты
     // ЗАМЕНИТЕ 'map.jpg' на путь к вашему файлу карты!
-    L.imageOverlay('../image/karta.jpg', imageBounds, {
+    L.imageOverlay('technology_page/image/karta.jpg', imageBounds, {
         opacity: 0.95,
         interactive: true,
         alt: 'Старинная карта мира ORBIS TERRARUM'
