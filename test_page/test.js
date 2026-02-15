@@ -1034,9 +1034,9 @@ function loadInteractiveTest() {
             
             <div class="interactive-footer">
                 <div id="interactive-feedback"></div>
-                <button class="nav-btn finish-btn" onclick="checkAllInteractiveTasks()" style="margin-top: 20px; margin-left: 35%">
-                    Проверить все задания
-                </button>
+                    <button class="nav-btn finish-btn" onclick="checkAllInteractiveTasks(); ym(106841481,'reachGoal','interactive_test_complete');" style="margin-top: 20px; margin-left: 35%">
+                        Проверить все задания
+                    </button>
             </div>
         </div>
     `;
@@ -1071,3 +1071,4 @@ window.goToQuestion = goToQuestion;
 window.finishTest = finishTest;
 window.restartTest = restartTest;
 window.closeTestModal = closeTestModal;
+
